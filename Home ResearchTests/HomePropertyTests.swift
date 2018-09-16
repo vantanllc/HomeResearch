@@ -16,14 +16,20 @@ class HomePropertySpec: QuickSpec {
     describe("HomeProperty Struct") {
       var homeProperty: HomeProperty!
       let expectedSheriffNumber = 123
+      let expectedJudgementPrice = 22.09
+      let futureTime: TimeInterval = 450
+      let expectedSalesDate = Date.init(timeIntervalSinceNow: futureTime)
+      let expectedAddress = "1283 Grand Ave NY City NY 55500"
       
       beforeEach {
-        homeProperty = HomeProperty(sheriffNumber: expectedSheriffNumber)
+        homeProperty = HomeProperty(sheriffNumber: expectedSheriffNumber, judgementPrice: expectedJudgementPrice, salesDate: expectedSalesDate, address: expectedAddress)
       }
       
       it("should have expected sheriff number") {
         expect(homeProperty.sheriffNumber).to(equal(expectedSheriffNumber))
       }
+      
+      
     }
   }
 }

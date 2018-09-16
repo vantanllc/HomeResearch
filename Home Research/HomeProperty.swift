@@ -10,4 +10,7 @@ import Foundation
 
 struct HomeProperty {
   let sheriffNumber: Int
+  let judgementPrice: Double
+  let salesDate: Date
+  let address: String
 }
