@@ -25,11 +25,12 @@ class HomePropertySpec: QuickSpec {
         homeProperty = HomeProperty(sheriffNumber: expectedSheriffNumber, judgementPrice: expectedJudgementPrice, salesDate: expectedSalesDate, address: expectedAddress)
       }
       
-      it("should have expected sheriff number") {
+      it("should have expected Home Property attributes.") {
         expect(homeProperty.sheriffNumber).to(equal(expectedSheriffNumber))
+        expect(homeProperty.judgementPrice).to(equal(expectedJudgementPrice))
+        expect(homeProperty.salesDate).to(equal(expectedSalesDate))
+        expect(homeProperty.address).to(equal(expectedAddress))
       }
-      
-      
     }
   }
 }
