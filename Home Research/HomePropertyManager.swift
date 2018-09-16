@@ -18,5 +18,11 @@ class HomePropertyManager {
   func getHomePropertiesCount() -> Int {
     return homeProperties.count
   }
+  
+  func getHomePropertyAtIndex(_ index: Int) -> HomeProperty {
+    let offsetIndex = homeProperties.index(homeProperties.startIndex, offsetBy: index)
+    
+    return homeProperties[offsetIndex]
+  }
 }
 

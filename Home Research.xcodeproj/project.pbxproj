@@ -10,7 +10,6 @@
 		1AA17CD8ED82DC74C35BD3DA /* Pods_Home_Research.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA9AA4DE48F11009E23453DA /* Pods_Home_Research.framework */; };
 		609D7B3B2B303AEF0FBA56DD /* Pods_Home_ResearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666BAA51006CD85DF0E8A2DD /* Pods_Home_ResearchTests.framework */; };
 		8B01DFF5214E742900068EA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01DFF4214E742900068EA8 /* AppDelegate.swift */; };
-		8B01DFF7214E742A00068EA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01DFF6214E742A00068EA8 /* ViewController.swift */; };
 		8B01DFFA214E742A00068EA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01DFF8214E742A00068EA8 /* Main.storyboard */; };
 		8B01DFFD214E742A00068EA8 /* Home_Research.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B01DFFB214E742A00068EA8 /* Home_Research.xcdatamodeld */; };
 		8B01DFFF214E742B00068EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B01DFFE214E742B00068EA8 /* Assets.xcassets */; };
@@ -21,6 +20,7 @@
 		8B01E028214E7A9C00068EA8 /* HomeProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E027214E7A9C00068EA8 /* HomeProperty.swift */; };
 		8B01E02A214E88E200068EA8 /* HomePropertyManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E029214E88E200068EA8 /* HomePropertyManagerSpec.swift */; };
 		8B01E02C214E893100068EA8 /* HomePropertyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E02B214E893100068EA8 /* HomePropertyManager.swift */; };
+		8B01E02E214E8ED600068EA8 /* HomePropertyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E02D214E8ED600068EA8 /* HomePropertyTableViewController.swift */; };
 		D44E41F735652B2969470244 /* Pods_Home_ResearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,6 @@
 		86529E4A457D0DA63C50091B /* Pods-Home ResearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home ResearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Home ResearchTests/Pods-Home ResearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B01DFF1214E742900068EA8 /* Home Research.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Research.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B01DFF4214E742900068EA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B01DFF6214E742A00068EA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B01DFF9214E742A00068EA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B01DFFC214E742A00068EA8 /* Home_Research.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Home_Research.xcdatamodel; sourceTree = "<group>"; };
 		8B01DFFE214E742B00068EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		8B01E027214E7A9C00068EA8 /* HomeProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProperty.swift; sourceTree = "<group>"; };
 		8B01E029214E88E200068EA8 /* HomePropertyManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyManagerSpec.swift; sourceTree = "<group>"; };
 		8B01E02B214E893100068EA8 /* HomePropertyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyManager.swift; sourceTree = "<group>"; };
+		8B01E02D214E8ED600068EA8 /* HomePropertyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyTableViewController.swift; sourceTree = "<group>"; };
 		8E52C7B1F3B7B6079B764F6F /* Pods-Home ResearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home ResearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Home ResearchTests/Pods-Home ResearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		984F5CFC6A5FABB2725D8329 /* Pods-Home Research.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Research.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Home Research/Pods-Home Research.debug.xcconfig"; sourceTree = "<group>"; };
 		A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home_ResearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				8B01DFF4214E742900068EA8 /* AppDelegate.swift */,
-				8B01DFF6214E742A00068EA8 /* ViewController.swift */,
 				8B01DFF8214E742A00068EA8 /* Main.storyboard */,
 				8B01DFFE214E742B00068EA8 /* Assets.xcassets */,
 				8B01E000214E742B00068EA8 /* LaunchScreen.storyboard */,
@@ -143,6 +142,7 @@
 				8B01DFFB214E742A00068EA8 /* Home_Research.xcdatamodeld */,
 				8B01E027214E7A9C00068EA8 /* HomeProperty.swift */,
 				8B01E02B214E893100068EA8 /* HomePropertyManager.swift */,
+				8B01E02D214E8ED600068EA8 /* HomePropertyTableViewController.swift */,
 			);
 			path = "Home Research";
 			sourceTree = "<group>";
@@ -392,10 +392,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B01DFF7214E742A00068EA8 /* ViewController.swift in Sources */,
 				8B01DFFD214E742A00068EA8 /* Home_Research.xcdatamodeld in Sources */,
 				8B01E02C214E893100068EA8 /* HomePropertyManager.swift in Sources */,
 				8B01DFF5214E742900068EA8 /* AppDelegate.swift in Sources */,
+				8B01E02E214E8ED600068EA8 /* HomePropertyTableViewController.swift in Sources */,
 				8B01E028214E7A9C00068EA8 /* HomeProperty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
