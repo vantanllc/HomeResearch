@@ -1,0 +1,6 @@
+framework module Pods_Home_ResearchTests {
+  umbrella header "Pods-Home ResearchTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
