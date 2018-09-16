@@ -19,6 +19,8 @@
 		8B01E018214E742B00068EA8 /* Home_ResearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E017214E742B00068EA8 /* Home_ResearchUITests.swift */; };
 		8B01E026214E7A8F00068EA8 /* HomePropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E025214E7A8F00068EA8 /* HomePropertyTests.swift */; };
 		8B01E028214E7A9C00068EA8 /* HomeProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E027214E7A9C00068EA8 /* HomeProperty.swift */; };
+		8B01E02A214E88E200068EA8 /* HomePropertyManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E029214E88E200068EA8 /* HomePropertyManagerSpec.swift */; };
+		8B01E02C214E893100068EA8 /* HomePropertyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E02B214E893100068EA8 /* HomePropertyManager.swift */; };
 		D44E41F735652B2969470244 /* Pods_Home_ResearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		8B01E019214E742B00068EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B01E025214E7A8F00068EA8 /* HomePropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyTests.swift; sourceTree = "<group>"; };
 		8B01E027214E7A9C00068EA8 /* HomeProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProperty.swift; sourceTree = "<group>"; };
+		8B01E029214E88E200068EA8 /* HomePropertyManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyManagerSpec.swift; sourceTree = "<group>"; };
+		8B01E02B214E893100068EA8 /* HomePropertyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyManager.swift; sourceTree = "<group>"; };
 		8E52C7B1F3B7B6079B764F6F /* Pods-Home ResearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home ResearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Home ResearchTests/Pods-Home ResearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		984F5CFC6A5FABB2725D8329 /* Pods-Home Research.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Research.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Home Research/Pods-Home Research.debug.xcconfig"; sourceTree = "<group>"; };
 		A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home_ResearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +142,7 @@
 				8B01E003214E742B00068EA8 /* Info.plist */,
 				8B01DFFB214E742A00068EA8 /* Home_Research.xcdatamodeld */,
 				8B01E027214E7A9C00068EA8 /* HomeProperty.swift */,
+				8B01E02B214E893100068EA8 /* HomePropertyManager.swift */,
 			);
 			path = "Home Research";
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				8B01E00C214E742B00068EA8 /* Home_ResearchTests.swift */,
 				8B01E00E214E742B00068EA8 /* Info.plist */,
 				8B01E025214E7A8F00068EA8 /* HomePropertyTests.swift */,
+				8B01E029214E88E200068EA8 /* HomePropertyManagerSpec.swift */,
 			);
 			path = "Home ResearchTests";
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 			files = (
 				8B01DFF7214E742A00068EA8 /* ViewController.swift in Sources */,
 				8B01DFFD214E742A00068EA8 /* Home_Research.xcdatamodeld in Sources */,
+				8B01E02C214E893100068EA8 /* HomePropertyManager.swift in Sources */,
 				8B01DFF5214E742900068EA8 /* AppDelegate.swift in Sources */,
 				8B01E028214E7A9C00068EA8 /* HomeProperty.swift in Sources */,
 			);
@@ -398,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B01E00D214E742B00068EA8 /* Home_ResearchTests.swift in Sources */,
+				8B01E02A214E88E200068EA8 /* HomePropertyManagerSpec.swift in Sources */,
 				8B01E026214E7A8F00068EA8 /* HomePropertyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

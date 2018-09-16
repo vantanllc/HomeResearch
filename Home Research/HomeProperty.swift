@@ -8,9 +8,15 @@
 
 import Foundation
 
-struct HomeProperty {
+struct HomeProperty: Hashable {
   let sheriffNumber: Int
   let judgementPrice: Double
   let salesDate: Date
   let address: String
+}
+
+extension HomeProperty {
+  static func createRandomHomeProperty() -> HomeProperty {
+    return HomeProperty(sheriffNumber: 123456789, judgementPrice: 123456.78, salesDate: Date.init(), address: "Some Address")
+  }
 }
