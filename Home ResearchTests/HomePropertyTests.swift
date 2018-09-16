@@ -12,5 +12,18 @@ import Nimble
 
 class HomePropertySpec: QuickSpec {
   override func spec() {
+    
+    describe("HomeProperty Struct") {
+      var homeProperty: HomeProperty!
+      let expectedSheriffNumber = 123
+      
+      beforeEach {
+        homeProperty = HomeProperty(sheriffNumber: expectedSheriffNumber)
+      }
+      
+      it("should have expected sheriff number") {
+        expect(homeProperty.sheriffNumber).to(equal(expectedSheriffNumber))
+      }
+    }
   }
 }

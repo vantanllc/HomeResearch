@@ -8,6 +8,6 @@
 
 import Foundation
 
-class HomeProperty {
-  
+struct HomeProperty {
+  let sheriffNumber: Int
 }
