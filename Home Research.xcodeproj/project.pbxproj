@@ -17,6 +17,8 @@
 		8B01E002214E742B00068EA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B01E000214E742B00068EA8 /* LaunchScreen.storyboard */; };
 		8B01E00D214E742B00068EA8 /* Home_ResearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E00C214E742B00068EA8 /* Home_ResearchTests.swift */; };
 		8B01E018214E742B00068EA8 /* Home_ResearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E017214E742B00068EA8 /* Home_ResearchUITests.swift */; };
+		8B01E026214E7A8F00068EA8 /* HomePropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E025214E7A8F00068EA8 /* HomePropertyTests.swift */; };
+		8B01E028214E7A9C00068EA8 /* HomeProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E027214E7A9C00068EA8 /* HomeProperty.swift */; };
 		D44E41F735652B2969470244 /* Pods_Home_ResearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		8B01E013214E742B00068EA8 /* Home ResearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Home ResearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B01E017214E742B00068EA8 /* Home_ResearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_ResearchUITests.swift; sourceTree = "<group>"; };
 		8B01E019214E742B00068EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B01E025214E7A8F00068EA8 /* HomePropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyTests.swift; sourceTree = "<group>"; };
+		8B01E027214E7A9C00068EA8 /* HomeProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProperty.swift; sourceTree = "<group>"; };
 		8E52C7B1F3B7B6079B764F6F /* Pods-Home ResearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home ResearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Home ResearchTests/Pods-Home ResearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		984F5CFC6A5FABB2725D8329 /* Pods-Home Research.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Research.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Home Research/Pods-Home Research.debug.xcconfig"; sourceTree = "<group>"; };
 		A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home_ResearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,7 @@
 				8B01E000214E742B00068EA8 /* LaunchScreen.storyboard */,
 				8B01E003214E742B00068EA8 /* Info.plist */,
 				8B01DFFB214E742A00068EA8 /* Home_Research.xcdatamodeld */,
+				8B01E027214E7A9C00068EA8 /* HomeProperty.swift */,
 			);
 			path = "Home Research";
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			children = (
 				8B01E00C214E742B00068EA8 /* Home_ResearchTests.swift */,
 				8B01E00E214E742B00068EA8 /* Info.plist */,
+				8B01E025214E7A8F00068EA8 /* HomePropertyTests.swift */,
 			);
 			path = "Home ResearchTests";
 			sourceTree = "<group>";
@@ -304,15 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Home ResearchTests-checkManifestLockResult.txt",
 			);
@@ -326,15 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Home Research-checkManifestLockResult.txt",
 			);
@@ -348,15 +346,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Home ResearchUITests-checkManifestLockResult.txt",
 			);
@@ -370,16 +364,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Home ResearchTests/Pods-Home ResearchTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -399,6 +389,7 @@
 				8B01DFF7214E742A00068EA8 /* ViewController.swift in Sources */,
 				8B01DFFD214E742A00068EA8 /* Home_Research.xcdatamodeld in Sources */,
 				8B01DFF5214E742900068EA8 /* AppDelegate.swift in Sources */,
+				8B01E028214E7A9C00068EA8 /* HomeProperty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B01E00D214E742B00068EA8 /* Home_ResearchTests.swift in Sources */,
+				8B01E026214E7A8F00068EA8 /* HomePropertyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
