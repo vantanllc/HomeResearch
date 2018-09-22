@@ -10,11 +10,20 @@ import UIKit
 
 class HomePropertyTableViewController: UITableViewController {
   let homePropertyManager = HomePropertyManager()
+  var currencyFormatter: NumberFormatter!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     homePropertyManager.addNewHomeProperty(HomeProperty.createRandomHomeProperty())
     homePropertyManager.addNewHomeProperty(HomeProperty.createRandomHomeProperty())
+    
+      currencyFormatter = NumberFormatter()
+      currencyFormatter.groupingSeparator = ","
+      currencyFormatter.groupingSize = 3
+      currencyFormatter.usesGroupingSeparator = true
+      currencyFormatter.decimalSeparator = "."
+      currencyFormatter.numberStyle = .decimal
+      currencyFormatter.maximumFractionDigits = 2
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = false
@@ -42,19 +51,24 @@ class HomePropertyTableViewController: UITableViewController {
   
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "HomePropertyCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "HomePropertyCell", for: indexPath) as! HomePropertyTableViewCell
     
     let homeProperty = homePropertyManager.getHomePropertyAtIndex(indexPath.row)
     
     
     // Configure the cell...
-    cell.textLabel?.text = "\(homeProperty.sheriffNumber)"
-    cell.detailTextLabel?.text = "\(homeProperty.judgementPrice)"
+    cell.sheriffNumberLabel.text = "\(homeProperty.sheriffNumber)"
+    cell.salesDateLabel.text = "\(homeProperty.salesDate)"
+    cell.addressLabel.text = "\(homeProperty.address)"
+    cell.judgementPriceLabel.text = "\(convertPriceToCurrentyFormat(price: homeProperty.judgementPrice))"
+    cell.resizeLabels()
     
     return cell
   }
   
-  
+  func convertPriceToCurrentyFormat(price: Double) -> String {
+    return "$\(String(describing: currencyFormatter.string(from: price as NSNumber)!))"
+  }
   /*
    // Override to support conditional editing of the table view.
    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
