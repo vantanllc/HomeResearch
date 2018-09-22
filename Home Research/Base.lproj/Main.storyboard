@@ -96,7 +96,9 @@
                             <outlet property="delegate" destination="8d1-WA-uE2" id="4WY-6s-Lgx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="70Z-jb-6XK"/>
+                    <navigationItem key="navigationItem" id="70Z-jb-6XK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sp9-0I-BdD"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJ8-Fk-eJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
