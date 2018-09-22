@@ -15,7 +15,11 @@ class AddNewHomePropertyTableViewController: UITableViewController {
   @IBOutlet weak var sheriffNumberTextField: UITextField!
   @IBOutlet weak var salesDatePicker: UIDatePicker!
   @IBOutlet weak var judgementPriceTextField: UITextField!
-  @IBOutlet weak var addressTextField: UITextField!
+  @IBOutlet weak var addressTextField: UITextField! {
+    didSet {
+      return 
+    }
+  }
   
   @IBAction func dismissViewController(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)

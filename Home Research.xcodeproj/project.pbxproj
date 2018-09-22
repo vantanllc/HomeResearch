@@ -25,6 +25,7 @@
 		8BB5D58E21567F220045FE70 /* AddNewHomePropertyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D58D21567F220045FE70 /* AddNewHomePropertyTableViewController.swift */; };
 		8BB5D590215686640045FE70 /* HomePropertyTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D58F215686640045FE70 /* HomePropertyTableViewDelegate.swift */; };
 		8BB5D592215687330045FE70 /* HomePropertyTableViewController+HomePropertyTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D591215687330045FE70 /* HomePropertyTableViewController+HomePropertyTableViewDelegate.swift */; };
+		8BB5D5942156A0100045FE70 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D5932156A0100045FE70 /* CurrencyFormatter.swift */; };
 		D44E41F735652B2969470244 /* Pods_Home_ResearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		8BB5D58D21567F220045FE70 /* AddNewHomePropertyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHomePropertyTableViewController.swift; sourceTree = "<group>"; };
 		8BB5D58F215686640045FE70 /* HomePropertyTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyTableViewDelegate.swift; sourceTree = "<group>"; };
 		8BB5D591215687330045FE70 /* HomePropertyTableViewController+HomePropertyTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePropertyTableViewController+HomePropertyTableViewDelegate.swift"; sourceTree = "<group>"; };
+		8BB5D5932156A0100045FE70 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		8E52C7B1F3B7B6079B764F6F /* Pods-Home ResearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home ResearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Home ResearchTests/Pods-Home ResearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		984F5CFC6A5FABB2725D8329 /* Pods-Home Research.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Research.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Home Research/Pods-Home Research.debug.xcconfig"; sourceTree = "<group>"; };
 		A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home_ResearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				8BB5D58D21567F220045FE70 /* AddNewHomePropertyTableViewController.swift */,
 				8BB5D58F215686640045FE70 /* HomePropertyTableViewDelegate.swift */,
 				8BB5D591215687330045FE70 /* HomePropertyTableViewController+HomePropertyTableViewDelegate.swift */,
+				8BB5D5932156A0100045FE70 /* CurrencyFormatter.swift */,
 			);
 			path = "Home Research";
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				8BB5D58E21567F220045FE70 /* AddNewHomePropertyTableViewController.swift in Sources */,
 				8B01E02E214E8ED600068EA8 /* HomePropertyTableViewController.swift in Sources */,
 				8B01E028214E7A9C00068EA8 /* HomeProperty.swift in Sources */,
+				8BB5D5942156A0100045FE70 /* CurrencyFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

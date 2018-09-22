@@ -10,20 +10,11 @@ import UIKit
 
 class HomePropertyTableViewController: UITableViewController {
   let homePropertyManager = HomePropertyManager()
-  var currencyFormatter: NumberFormatter!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     homePropertyManager.addNewHomeProperty(HomeProperty.createRandomHomeProperty())
     homePropertyManager.addNewHomeProperty(HomeProperty.createRandomHomeProperty())
-    
-    currencyFormatter = NumberFormatter()
-    currencyFormatter.groupingSeparator = ","
-    currencyFormatter.groupingSize = 3
-    currencyFormatter.usesGroupingSeparator = true
-    currencyFormatter.decimalSeparator = "."
-    currencyFormatter.numberStyle = .decimal
-    currencyFormatter.maximumFractionDigits = 2
   }
   
   override func didReceiveMemoryWarning() {
@@ -49,14 +40,10 @@ class HomePropertyTableViewController: UITableViewController {
     cell.sheriffNumberLabel.text = "\(homeProperty.sheriffNumber)"
     cell.salesDateLabel.text = "\(homeProperty.salesDate)"
     cell.addressLabel.text = "\(homeProperty.address)"
-    cell.judgementPriceLabel.text = "\(convertPriceToCurrentyFormat(price: homeProperty.judgementPrice))"
+    cell.judgementPriceLabel.text = "\(CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: homeProperty.judgementPrice))"
     cell.resizeLabels()
     
     return cell
-  }
-  
-  func convertPriceToCurrentyFormat(price: Double) -> String {
-    return "$\(String(describing: currencyFormatter.string(from: price as NSNumber)!))"
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
