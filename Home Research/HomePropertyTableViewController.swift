@@ -46,8 +46,6 @@ class HomePropertyTableViewController: UITableViewController {
     
     let homeProperty = homePropertyManager.getHomePropertyAtIndex(indexPath.row)
     
-    
-    // Configure the cell...
     cell.sheriffNumberLabel.text = "\(homeProperty.sheriffNumber)"
     cell.salesDateLabel.text = "\(homeProperty.salesDate)"
     cell.addressLabel.text = "\(homeProperty.address)"
@@ -61,6 +59,13 @@ class HomePropertyTableViewController: UITableViewController {
     return "$\(String(describing: currencyFormatter.string(from: price as NSNumber)!))"
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let addNewHomePropertyViewController = segue.destination as? AddNewHomePropertyTableViewController else {
+      return
+    }
+    
+    addNewHomePropertyViewController.delegate = self
+  }
 }
 
 

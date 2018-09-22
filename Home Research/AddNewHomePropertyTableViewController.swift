@@ -22,7 +22,13 @@ class AddNewHomePropertyTableViewController: UITableViewController {
   }
   
   @IBAction func saveNewHomeProperty(_ sender: Any) {
-    
+    let newHomeProperty = HomeProperty(
+      sheriffNumber: Int(sheriffNumberTextField.text!)!,
+      judgementPrice: Double(judgementPriceTextField.text!)!,
+      salesDate: salesDatePicker.date,
+      address: addressTextField.text!)
+    delegate?.didAddNewHomeProperty(newHomeProperty)
+    dismiss(animated: true, completion: nil)
   }
   
   override func viewDidLoad() {
