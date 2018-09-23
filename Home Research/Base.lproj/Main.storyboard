@@ -108,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="1010.15625" y="-189.2578125"/>
         </scene>
-        <!--Add New Home Property Table View Controller-->
+        <!--Delegate-->
         <scene sceneID="igz-Ul-Ggs">
             <objects>
                 <tableViewController id="XU7-sg-t8x" customClass="AddNewHomePropertyTableViewController" customModule="Home_Research" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,6 +211,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="addressTextFieldEditingDidEnd:" destination="XU7-sg-t8x" eventType="editingDidEnd" id="nWF-1T-zm1"/>
+                                                    </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dcd-Bj-M5E" customClass="MGLMapView">
                                                     <rect key="frame" x="20" y="45" width="500" height="244"/>
@@ -228,6 +231,9 @@
                                                             <real key="value" value="9"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="XU7-sg-t8x" id="50Q-1u-jnw"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -271,6 +277,7 @@
                     <connections>
                         <outlet property="addressTextField" destination="yhH-zt-RrG" id="Vfe-V5-MnN"/>
                         <outlet property="judgementPriceTextField" destination="HOE-Bb-0U7" id="Qlz-cI-Ckr"/>
+                        <outlet property="mapView" destination="Dcd-Bj-M5E" id="MVN-Lv-HQq"/>
                         <outlet property="salesDatePicker" destination="IvZ-D1-JjM" id="qKG-qL-FRl"/>
                         <outlet property="sheriffNumberTextField" destination="lbp-j2-ePt" id="lfi-ae-1fm"/>
                     </connections>
