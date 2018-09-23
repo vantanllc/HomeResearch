@@ -20,6 +20,10 @@ class AddNewHomePropertyTableViewController: UITableViewController {
   @IBOutlet weak var stateTextField: UITextField!
   @IBOutlet weak var cityTextField: UITextField!
   
+  var fullAddress: String {
+    return "\(addressTextField.text!) \(cityTextField.text!) \(stateTextField.text!)"
+  }
+  
   @IBAction func dismissViewController(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
   }
@@ -28,8 +32,6 @@ class AddNewHomePropertyTableViewController: UITableViewController {
     if (sender.text ?? "").isEmpty {
       return
     }
-    
-    let fullAddress = "\(sender.text!) \(cityTextField.text!) \(stateTextField.text!)"
     
     let geoCoder = CLGeocoder()
     geoCoder.geocodeAddressString(fullAddress) { (placemarks, error) in
@@ -40,7 +42,7 @@ class AddNewHomePropertyTableViewController: UITableViewController {
           return
       }
       
-      self.addMapAnnotation(withAddress: fullAddress, atCoordinate: location.coordinate)
+      self.addMapAnnotation(withAddress: self.fullAddress, atCoordinate: location.coordinate)
     }
     
   }
@@ -50,7 +52,7 @@ class AddNewHomePropertyTableViewController: UITableViewController {
       sheriffNumber: Int(sheriffNumberTextField.text!)!,
       judgementPrice: Double(judgementPriceTextField.text!)!,
       salesDate: salesDatePicker.date,
-      address: addressTextField.text!)
+      address: fullAddress)
     delegate?.didAddNewHomeProperty(newHomeProperty)
     dismiss(animated: true, completion: nil)
   }
