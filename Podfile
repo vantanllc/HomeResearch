@@ -12,6 +12,7 @@ target 'Home Research' do
   use_frameworks!
 
   # Pods for Home Research
+  pod 'Mapbox-iOS-SDK', '~>4.4'
 
   target 'Home ResearchTests' do
     inherit! :search_paths
