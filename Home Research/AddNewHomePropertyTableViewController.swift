@@ -40,7 +40,7 @@ class AddNewHomePropertyTableViewController: UITableViewController {
           return
       }
       
-      self.addMapAnnotation(withCoordinate: location.coordinate)
+      self.addMapAnnotation(withAddress: fullAddress, atCoordinate: location.coordinate)
     }
     
   }
@@ -66,39 +66,13 @@ class AddNewHomePropertyTableViewController: UITableViewController {
     super.didReceiveMemoryWarning()
   }
   
-  func addMapAnnotation(withCoordinate coordinate: CLLocationCoordinate2D) {
-//    let coordinate = CLLocationCoordinate2D(latitude: 41.5868,  longitude: -93.598022)
+  func addMapAnnotation(withAddress address: String, atCoordinate coordinate: CLLocationCoordinate2D) {
     let point = CustomPointAnnotation(coordinate: coordinate,
-                                      title: "Custom Point Annotation",
+                                      title: address,
       subtitle: nil)
-    
-    // Set the custom `image` and `reuseIdentifier` properties, later used in the `mapView:imageForAnnotation:` delegate method.
-    // Create a unique reuse identifier for each new annotation image.
-    point.reuseIdentifier = "customAnnotation"
-    // This dot image grows in size as more annotations are added to the array.
-    point.image = dot(size:10)
+
+    point.reuseIdentifier = "customMapAnnotation"
     mapView.addAnnotation(point)
-  }
-  
-  func dot(size: Int) -> UIImage {
-    let floatSize = CGFloat(size)
-    let rect = CGRect(x: 0, y: 0, width: floatSize, height: floatSize)
-    let strokeWidth: CGFloat = 1
-    
-    UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
-    
-    let ovalPath = UIBezierPath(ovalIn: rect.insetBy(dx: strokeWidth, dy: strokeWidth))
-    UIColor.darkGray.setFill()
-    ovalPath.fill()
-    
-    UIColor.white.setStroke()
-    ovalPath.lineWidth = strokeWidth
-    ovalPath.stroke()
-    
-    let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-    UIGraphicsEndImageContext()
-    
-    return image
   }
 }
 

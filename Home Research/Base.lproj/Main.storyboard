@@ -108,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="1010.15625" y="-189.2578125"/>
         </scene>
-        <!--Add New Home Property Table View Controller-->
+        <!--Delegate-->
         <scene sceneID="igz-Ul-Ggs">
             <objects>
                 <tableViewController id="XU7-sg-t8x" customClass="AddNewHomePropertyTableViewController" customModule="Home_Research" customModuleProvider="target" sceneMemberID="viewController">
@@ -293,6 +293,9 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="showsHeading" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="XU7-sg-t8x" id="ClQ-eh-2ff"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
