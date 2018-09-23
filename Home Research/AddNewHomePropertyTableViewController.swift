@@ -17,6 +17,8 @@ class AddNewHomePropertyTableViewController: UITableViewController {
   @IBOutlet weak var salesDatePicker: UIDatePicker!
   @IBOutlet weak var judgementPriceTextField: UITextField!
   @IBOutlet weak var addressTextField: UITextField! 
+  @IBOutlet weak var stateTextField: UITextField!
+  @IBOutlet weak var cityTextField: UITextField!
   
   @IBAction func dismissViewController(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
@@ -27,8 +29,10 @@ class AddNewHomePropertyTableViewController: UITableViewController {
       return
     }
     
+    let fullAddress = "\(sender.text!) \(cityTextField.text!) \(stateTextField.text!)"
+    
     let geoCoder = CLGeocoder()
-    geoCoder.geocodeAddressString(sender.text!) { (placemarks, error) in
+    geoCoder.geocodeAddressString(fullAddress) { (placemarks, error) in
       guard
         let placemarks = placemarks,
         let location = placemarks.first?.location

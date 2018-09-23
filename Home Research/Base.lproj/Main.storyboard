@@ -205,7 +205,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1234 Grand Ave, New Orleans LI, 12345" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhH-zt-RrG">
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1234 Grand Ave" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhH-zt-RrG">
                                                     <rect key="frame" x="153" y="7" width="367" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
@@ -267,13 +267,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="xbc-Bz-Ead">
-                                        <rect key="frame" x="0.0" y="419.5" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="375.5" width="540" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xbc-Bz-Ead" id="qja-lL-has">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="249.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dcd-Bj-M5E" customClass="MGLMapView">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dcd-Bj-M5E" customClass="MGLMapView">
                                                     <rect key="frame" x="20" y="0.0" width="500" height="244"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -290,7 +290,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="allowsTilting" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="allowsRotating" value="NO"/>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsScrolling" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="showsHeading" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
@@ -299,7 +298,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="F20-xd-0DK">
-                                        <rect key="frame" x="0.0" y="463.5" width="540" height="44"/>
+                                        <rect key="frame" x="0.0" y="625.5" width="540" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F20-xd-0DK" id="dYj-8r-0QA">
                                             <rect key="frame" x="0.0" y="0.0" width="540" height="43.5"/>
@@ -336,10 +335,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressTextField" destination="yhH-zt-RrG" id="Vfe-V5-MnN"/>
+                        <outlet property="cityTextField" destination="jUX-qZ-lls" id="4II-C3-894"/>
                         <outlet property="judgementPriceTextField" destination="HOE-Bb-0U7" id="Qlz-cI-Ckr"/>
                         <outlet property="mapView" destination="Dcd-Bj-M5E" id="MVN-Lv-HQq"/>
                         <outlet property="salesDatePicker" destination="IvZ-D1-JjM" id="qKG-qL-FRl"/>
                         <outlet property="sheriffNumberTextField" destination="lbp-j2-ePt" id="lfi-ae-1fm"/>
+                        <outlet property="stateTextField" destination="tR8-eN-Sr3" id="Kaw-lI-bBg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y5Y-mD-Dat" userLabel="First Responder" sceneMemberID="firstResponder"/>
