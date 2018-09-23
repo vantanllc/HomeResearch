@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Home Research/AddNewHomePropertyTableViewController.swift"
-            timestampString = "559394407.221148"
+            timestampString = "559394820.217629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "addMapAnnotation()"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "addMapAnnotation(withCoordinate:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Home Research/AddNewHomePropertyTableViewController.swift"
-            timestampString = "559394407.221514"
+            timestampString = "559394820.218012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"

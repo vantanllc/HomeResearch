@@ -27,7 +27,18 @@ class AddNewHomePropertyTableViewController: UITableViewController {
       return
     }
     
-    addMapAnnotation()
+    let geoCoder = CLGeocoder()
+    geoCoder.geocodeAddressString(sender.text!) { (placemarks, error) in
+      guard
+        let placemarks = placemarks,
+        let location = placemarks.first?.location
+        else {
+          return
+      }
+      
+      self.addMapAnnotation(withCoordinate: location.coordinate)
+    }
+    
   }
   
   @IBAction func saveNewHomeProperty(_ sender: Any) {
@@ -51,8 +62,8 @@ class AddNewHomePropertyTableViewController: UITableViewController {
     super.didReceiveMemoryWarning()
   }
   
-  func addMapAnnotation() {
-    let coordinate = CLLocationCoordinate2D(latitude: 41.5868,  longitude: -93.598022)
+  func addMapAnnotation(withCoordinate coordinate: CLLocationCoordinate2D) {
+//    let coordinate = CLLocationCoordinate2D(latitude: 41.5868,  longitude: -93.598022)
     let point = CustomPointAnnotation(coordinate: coordinate,
                                       title: "Custom Point Annotation",
       subtitle: nil)
