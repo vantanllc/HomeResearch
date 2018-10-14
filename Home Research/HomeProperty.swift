@@ -24,7 +24,11 @@ struct HomeProperty: Hashable {
   let judgementPrice: Double
   let salesDate: Date
   let address: String
-  let prices: [(date: Date, price: Double)]
+  var prices: [(date: Date, price: Double)]
+  
+  mutating func addPrice(_ price: Double, onDate date: Date) {
+    prices.append((date, price))
+  }
 }
 
 extension HomeProperty {
