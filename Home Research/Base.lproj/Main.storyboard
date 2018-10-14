@@ -368,6 +368,15 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TyM-c3-yfu" id="Z4a-Dj-PLe">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zb-0w-kYA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                    <items>
+                                                        <barButtonItem systemItem="add" id="jhf-1M-Ju7"/>
+                                                    </items>
+                                                </toolbar>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="d3V-V9-EoZ">
@@ -527,6 +536,8 @@
                             <outlet property="delegate" destination="Djw-mk-0jq" id="dPH-nQ-oPK"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressLabel" destination="FTb-52-viW" id="f7P-Kz-2cD"/>
                         <outlet property="judgementPriceLabel" destination="F9m-24-KaS" id="eiK-IK-YIm"/>
