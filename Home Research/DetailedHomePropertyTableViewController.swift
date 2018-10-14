@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mapbox
 
 class DetailedHomePropertyTableViewController: UITableViewController {
   var homeProperty: HomeProperty!
@@ -15,6 +16,7 @@ class DetailedHomePropertyTableViewController: UITableViewController {
   @IBOutlet weak var salesDateLabel: UILabel!
   @IBOutlet weak var judgementPriceLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!
+  @IBOutlet weak var mapView: MGLMapView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,6 +25,17 @@ class DetailedHomePropertyTableViewController: UITableViewController {
     salesDateLabel.text = TLDateFormatter.shared.getStringFromDate(homeProperty.salesDate)
     judgementPriceLabel.text = CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: homeProperty.judgementPrice)
     addressLabel.text = homeProperty.address
+    
+    TLGeoCoder.shared.geocodeAddressString(homeProperty.address) { (placemarks, error) in
+      guard
+        let placemarks = placemarks,
+        let location = placemarks.first?.location
+        else {
+          return
+      }
+      
+      TLGeoCoder.shared.addMapAnnotation(withAddress: self.homeProperty.address, atCoordinate: location.coordinate, toMapView: self.mapView)
+    }
   }
   
   override func didReceiveMemoryWarning() {

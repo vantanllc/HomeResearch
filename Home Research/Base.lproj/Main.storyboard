@@ -412,6 +412,8 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
                                                             <real key="value" value="9"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsRotating" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsTilting" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -528,6 +530,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="FTb-52-viW" id="f7P-Kz-2cD"/>
                         <outlet property="judgementPriceLabel" destination="F9m-24-KaS" id="eiK-IK-YIm"/>
+                        <outlet property="mapView" destination="bht-kz-J9P" id="p8Z-lm-mgG"/>
                         <outlet property="salesDateLabel" destination="ODc-MW-RZe" id="Sba-2X-mVh"/>
                         <outlet property="sheriffNumberLabel" destination="XdW-PV-pDW" id="YkE-Bi-iug"/>
                     </connections>
