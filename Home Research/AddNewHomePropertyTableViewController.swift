@@ -33,8 +33,7 @@ class AddNewHomePropertyTableViewController: UITableViewController {
       return
     }
     
-    let geoCoder = CLGeocoder()
-    geoCoder.geocodeAddressString(fullAddress) { (placemarks, error) in
+    TLGeoCoder.shared.geocodeAddressString(fullAddress) { (placemarks, error) in
       guard
         let placemarks = placemarks,
         let location = placemarks.first?.location
@@ -42,7 +41,7 @@ class AddNewHomePropertyTableViewController: UITableViewController {
           return
       }
       
-      self.addMapAnnotation(withAddress: self.fullAddress, atCoordinate: location.coordinate)
+      TLGeoCoder.shared.addMapAnnotation(withAddress: self.fullAddress, atCoordinate: location.coordinate, toMapView: self.mapView)
     }
     
   }
@@ -66,15 +65,6 @@ class AddNewHomePropertyTableViewController: UITableViewController {
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-  }
-  
-  func addMapAnnotation(withAddress address: String, atCoordinate coordinate: CLLocationCoordinate2D) {
-    let point = CustomPointAnnotation(coordinate: coordinate,
-                                      title: address,
-      subtitle: nil)
-
-    point.reuseIdentifier = "customMapAnnotation"
-    mapView.addAnnotation(point)
   }
 }
 

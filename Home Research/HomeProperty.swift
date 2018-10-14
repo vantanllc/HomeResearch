@@ -17,6 +17,6 @@ struct HomeProperty: Hashable {
 
 extension HomeProperty {
   static func createRandomHomeProperty() -> HomeProperty {
-    return HomeProperty(sheriffNumber: Int(arc4random()), judgementPrice: drand48() * 100000, salesDate: Date.init(), address: "Some Address")
+    return HomeProperty(sheriffNumber: Int(arc4random()), judgementPrice: drand48() * 100000, salesDate: Date.init(), address: "1451 E Bell Ave, Des Moines, Iowa")
   }
 }
