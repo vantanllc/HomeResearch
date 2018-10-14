@@ -13,12 +13,19 @@ class TLDateFormatter {
   private let dateFormatter = DateFormatter()
   
   private init() {
-    dateFormatter.dateStyle = .long
-    dateFormatter.timeStyle = .none
-    dateFormatter.locale = Locale(identifier: "en_US")
   }
   
   func getStringFromDate(_ date: Date) -> String {
+    dateFormatter.dateStyle = .long
+    dateFormatter.timeStyle = .none
+    dateFormatter.locale = Locale(identifier: "en_US")
+    return dateFormatter.string(from: date)
+  }
+  
+  func getShortStringFromDate(_ date: Date) -> String {
+    dateFormatter.dateStyle = .short
+    dateFormatter.timeStyle = .none
+    dateFormatter.locale = Locale(identifier: "en_US")
     return dateFormatter.string(from: date)
   }
 }
