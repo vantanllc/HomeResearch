@@ -18,8 +18,8 @@ class DetailedHomePropertyTableViewController: UITableViewController {
     super.viewDidLoad()
     
     sheriffNumberLabel.text = "\(homeProperty.sheriffNumber)"
-    salesDateLabel.text = homeProperty.salesDate.description
-    judgementPriceLabel.text = "$\(homeProperty.judgementPrice)"
+    salesDateLabel.text = TLDateFormatter.shared.getStringFromDate(homeProperty.salesDate)
+    judgementPriceLabel.text = CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: homeProperty.judgementPrice)
     
   }
   
