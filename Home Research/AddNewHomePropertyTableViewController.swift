@@ -51,7 +51,9 @@ class AddNewHomePropertyTableViewController: UITableViewController {
       sheriffNumber: Int(sheriffNumberTextField.text!)!,
       judgementPrice: Double(judgementPriceTextField.text!)!,
       salesDate: salesDatePicker.date,
-      address: fullAddress)
+      address: fullAddress,
+      prices: []
+    )
     delegate?.didAddNewHomeProperty(newHomeProperty)
     dismiss(animated: true, completion: nil)
   }
