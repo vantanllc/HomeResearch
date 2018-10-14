@@ -10,6 +10,7 @@ import UIKit
 
 class HomePropertyTableViewController: UITableViewController {
   let homePropertyManager = HomePropertyManager()
+  var selectedHomeProperty: HomeProperty?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,12 +47,20 @@ class HomePropertyTableViewController: UITableViewController {
     return cell
   }
   
+  override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    selectedHomeProperty = homePropertyManager.getHomePropertyAtIndex(indexPath.row)
+    return indexPath
+  }
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard let addNewHomePropertyViewController = segue.destination as? AddNewHomePropertyTableViewController else {
-      return
+    if let addNewHomePropertyViewController = segue.destination as? AddNewHomePropertyTableViewController {
+      addNewHomePropertyViewController.delegate = self
     }
     
-    addNewHomePropertyViewController.delegate = self
+    if let detailedHomePropertyViewController = segue.destination as? DetailedHomePropertyTableViewController {
+      detailedHomePropertyViewController.homeProperty = selectedHomeProperty
+    }
+    
   }
 }
 
