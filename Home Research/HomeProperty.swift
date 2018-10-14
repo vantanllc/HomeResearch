@@ -22,7 +22,7 @@ struct HomeProperty {
 
 extension HomeProperty {
   static func createRandomHomeProperty() -> HomeProperty {
-    return HomeProperty(sheriffNumber: Int(arc4random()), judgementPrice: drand48() * 100000, salesDate: Date.init(), address: "1451 E Bell Ave, Des Moines, Iowa", prices: [])
+    return HomeProperty(sheriffNumber: Int(arc4random()), judgementPrice: drand48() * 100000, salesDate: Date.init(), address: "1451 E Bell Ave, Des Moines, Iowa", prices: [(Date.init(timeIntervalSinceNow: 0),80000),(Date.init(timeIntervalSinceNow: 100000),100000)])
   }
 }
 

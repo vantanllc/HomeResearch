@@ -8,6 +8,7 @@
 
 import UIKit
 import Mapbox
+import Charts
 
 class DetailedHomePropertyTableViewController: UITableViewController {
   var homeProperty: HomeProperty!
@@ -17,6 +18,7 @@ class DetailedHomePropertyTableViewController: UITableViewController {
   @IBOutlet weak var judgementPriceLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var mapView: MGLMapView!
+  @IBOutlet weak var barChartView: BarChartView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,6 +27,17 @@ class DetailedHomePropertyTableViewController: UITableViewController {
     salesDateLabel.text = TLDateFormatter.shared.getStringFromDate(homeProperty.salesDate)
     judgementPriceLabel.text = CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: homeProperty.judgementPrice)
     addressLabel.text = homeProperty.address
+    
+    var dataEntries: [BarChartDataEntry] = []
+    for index in 0..<homeProperty.prices.count {
+      let priceData = BarChartDataEntry(x: Double(index), y: homeProperty.prices[index].price)
+      dataEntries.append(priceData)
+    }
+    
+    let chartDataSet = BarChartDataSet(values: dataEntries, label: "$")
+    let chartData = BarChartData()
+    chartData.addDataSet(chartDataSet)
+    barChartView.data = chartData
     
     TLGeoCoder.shared.geocodeAddressString(homeProperty.address) { (placemarks, error) in
       guard
