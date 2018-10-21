@@ -12,6 +12,7 @@ import Charts
 
 class DetailedHomePropertyTableViewController: UITableViewController {
   var homeProperty: HomeProperty!
+  weak var delegate: DetailedHomePropertyDelegate?
   
   @IBOutlet weak var sheriffNumberLabel: UILabel!
   @IBOutlet weak var salesDateLabel: UILabel!
@@ -68,5 +69,6 @@ extension DetailedHomePropertyTableViewController: PriceHistoryDelegate {
   func didUpdateHomeProperty(_ updatedHomeProperty: HomeProperty) {
     homeProperty = updatedHomeProperty
     loadBarChart()
+    delegate?.didUpdateHomeProperty(updatedHomeProperty)
   }
 }

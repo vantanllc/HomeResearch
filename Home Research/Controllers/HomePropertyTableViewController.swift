@@ -59,6 +59,7 @@ class HomePropertyTableViewController: UITableViewController {
     
     if let detailedHomePropertyViewController = segue.destination as? DetailedHomePropertyTableViewController {
       detailedHomePropertyViewController.homeProperty = selectedHomeProperty
+      detailedHomePropertyViewController.delegate = self
     }
   }
 }

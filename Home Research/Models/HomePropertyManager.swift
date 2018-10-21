@@ -24,5 +24,9 @@ class HomePropertyManager {
     
     return homeProperties[offsetIndex]
   }
+  
+  func updateHomeProperty(_ updatedHomeProperty: HomeProperty) {
+    homeProperties.update(with: updatedHomeProperty)
+  }
 }
 

@@ -17,11 +17,12 @@ class AddNewPriceTableViewController: UITableViewController {
   }
   
   @IBAction func saveNewPrice(_ sender: UIBarButtonItem) {
-    guard let price = newPriceTextField.text else {
+    guard let priceText = newPriceTextField.text,
+          let price = Double(priceText) else {
       return
     }
     
-    delegate?.didAddNewPrice(Double(price)!, atDate: datePicker.date)
+    delegate?.didAddNewPrice(price, atDate: datePicker.date)
     dismiss(animated: true, completion: nil)
   }
   
