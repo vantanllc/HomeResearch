@@ -1,0 +1,41 @@
+//
+//  AddPriceTableViewController.swift
+//  Home Research
+//
+//  Created by Thinh Luong on 10/21/18.
+//  Copyright © 2018 Vantan LLC. All rights reserved.
+//
+
+import UIKit
+
+class PriceHistoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+  
+  var homeProperty: HomeProperty!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+  
+  // MARK: - Table view data source
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return homeProperty.getPricesToDisplay().count
+  }
+  
+  
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   let cell = tableView.dequeueReusableCell(withIdentifier: "AddPriceCell", for: indexPath)
+   
+    let date = homeProperty.getPricesToDisplay()[indexPath.row].date
+    let price = homeProperty.getPricesToDisplay()[indexPath.row].price
+    
+    cell.textLabel?.text = TLDateFormatter.shared.getShortStringFromDate(date)
+    cell.detailTextLabel?.text = CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: price)
+   
+   return cell
+   }
+}

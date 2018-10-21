@@ -28,16 +28,6 @@ class DetailedHomePropertyTableViewController: UITableViewController {
     judgementPriceLabel.text = CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: homeProperty.judgementPrice)
     addressLabel.text = homeProperty.address
     
-//    var dataEntries: [BarChartDataEntry] = []
-//    for index in 0..<homeProperty.prices.count {
-//      let priceData = BarChartDataEntry(x: Double(index), y: homeProperty.prices[index].price)
-//      dataEntries.append(priceData)
-//    }
-//
-//    let chartDataSet = BarChartDataSet(values: dataEntries, label: "$")
-//    let chartData = BarChartData()
-//    chartData.addDataSet(chartDataSet)
-//    barChartView.data = chartData
     let xValues = homeProperty.prices.map {TLDateFormatter.shared.getShortStringFromDate($0.date)}
     let yValues = homeProperty.prices.map {$0.price}
 
@@ -62,5 +52,11 @@ class DetailedHomePropertyTableViewController: UITableViewController {
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let priceHistoryViewController = segue.destination as? PriceHistoryTableViewController {
+      priceHistoryViewController.homeProperty = homeProperty
+    }
   }
 }

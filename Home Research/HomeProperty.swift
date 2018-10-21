@@ -18,6 +18,10 @@ struct HomeProperty {
   mutating func addPrice(_ price: Double, onDate date: Date) {
     prices.append((date, price))
   }
+  
+  func getPricesToDisplay() -> [(date: Date, price: Double)] {
+    return prices.reversed()
+  }
 }
 
 extension HomeProperty {
