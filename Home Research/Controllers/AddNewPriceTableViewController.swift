@@ -10,7 +10,7 @@ import UIKit
 
 class AddNewPriceTableViewController: UITableViewController {
   
-  weak var delegate: PriceHistoryDelegate?
+  weak var delegate: AddNewPriceDelegate?
   
   @IBAction func cancelAddingNewPrice(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)

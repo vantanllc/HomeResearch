@@ -9,5 +9,5 @@
 import Foundation
 
 protocol PriceHistoryDelegate: class {
-  func didAddNewPrice(_ newPrice: Double, atDate date: Date)
+  func didUpdateHomeProperty(_ updatedHomeProperty: HomeProperty)
 }

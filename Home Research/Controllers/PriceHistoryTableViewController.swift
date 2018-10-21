@@ -11,6 +11,8 @@ import UIKit
 class PriceHistoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   var homeProperty: HomeProperty!
+  weak var delegate: PriceHistoryDelegate?
+  
   @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
@@ -47,9 +49,10 @@ class PriceHistoryTableViewController: UIViewController, UITableViewDataSource, 
   }
 }
 
-extension PriceHistoryTableViewController: PriceHistoryDelegate {
+extension PriceHistoryTableViewController: AddNewPriceDelegate {
   func didAddNewPrice(_ newPrice: Double, atDate date: Date) {
     homeProperty.addPrice(newPrice, onDate: date)
     tableView.reloadData()
+    delegate?.didUpdateHomeProperty(homeProperty)
   }
 }

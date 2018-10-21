@@ -28,16 +28,7 @@ class DetailedHomePropertyTableViewController: UITableViewController {
     judgementPriceLabel.text = CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: homeProperty.judgementPrice)
     addressLabel.text = homeProperty.address
     
-    let xValues = homeProperty.prices.map {TLDateFormatter.shared.getShortStringFromDate($0.date)}
-    let yValues = homeProperty.prices.map {$0.price}
-
-    barChartView.autoScaleMinMaxEnabled = false
-    barChartView.setBarChartData(xValues: xValues, yValues: yValues, label: "$")
-    barChartView.leftAxis.axisMinimum = 0.0
-    barChartView.leftAxis.axisMaximum = 200000
-    barChartView.rightAxis.enabled = false
-    
-    
+    loadBarChart()
     TLGeoCoder.shared.geocodeAddressString(homeProperty.address) { (placemarks, error) in
       guard
         let placemarks = placemarks,
@@ -50,6 +41,17 @@ class DetailedHomePropertyTableViewController: UITableViewController {
     }
   }
   
+  func loadBarChart() {
+    let xValues = homeProperty.prices.map {TLDateFormatter.shared.getShortStringFromDate($0.date)}
+    let yValues = homeProperty.prices.map {$0.price}
+    
+    barChartView.autoScaleMinMaxEnabled = false
+    barChartView.setBarChartData(xValues: xValues, yValues: yValues, label: "$")
+    barChartView.leftAxis.axisMinimum = 0.0
+    barChartView.leftAxis.axisMaximum = 200000
+    barChartView.rightAxis.enabled = false
+  }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
@@ -57,6 +59,14 @@ class DetailedHomePropertyTableViewController: UITableViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let priceHistoryViewController = segue.destination as? PriceHistoryTableViewController {
       priceHistoryViewController.homeProperty = homeProperty
+      priceHistoryViewController.delegate = self
     }
+  }
+}
+
+extension DetailedHomePropertyTableViewController: PriceHistoryDelegate {
+  func didUpdateHomeProperty(_ updatedHomeProperty: HomeProperty) {
+    homeProperty = updatedHomeProperty
+    loadBarChart()
   }
 }
