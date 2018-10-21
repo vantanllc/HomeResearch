@@ -41,6 +41,19 @@ class PriceHistoryTableViewController: UIViewController, UITableViewDataSource, 
     return cell
   }
   
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let prices = homeProperty.getPricesToDisplay()
+      homeProperty.deletePrice(prices[indexPath.row].price, onDate: prices[indexPath.row].date)
+      tableView.deleteRows(at: [indexPath], with: .automatic)
+      delegate?.didUpdateHomeProperty(homeProperty)
+    }
+  }
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let addNewPriceViewController = segue.destination as? AddNewPriceTableViewController {
       addNewPriceViewController.delegate = self

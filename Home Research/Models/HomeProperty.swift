@@ -19,6 +19,12 @@ struct HomeProperty {
     prices.append((date, price))
   }
   
+  mutating func deletePrice(_ priceToDelete: Double, onDate date: Date) {
+    prices = prices.filter {price in
+      return !(price.date == date && price.price == priceToDelete)
+    }
+  }
+  
   func getPricesToDisplay() -> [(date: Date, price: Double)] {
     return prices.reversed()
   }
