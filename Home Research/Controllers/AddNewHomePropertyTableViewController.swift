@@ -11,7 +11,7 @@ import Mapbox
 
 class AddNewHomePropertyTableViewController: UITableViewController {
   
-  weak var delegate: HomePropertyTableViewDelegate?
+  weak var delegate: AddHomePropertyDelegate?
   
   @IBOutlet weak var sheriffNumberTextField: UITextField!
   @IBOutlet weak var salesDatePicker: UIDatePicker!

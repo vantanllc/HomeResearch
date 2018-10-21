@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension HomePropertyTableViewController: HomePropertyTableViewDelegate {
+extension HomePropertyTableViewController: AddHomePropertyDelegate {
   func didAddNewHomeProperty(_ homeProperty: HomeProperty) {
     homePropertyManager.addNewHomeProperty(homeProperty)
     tableView.reloadData()

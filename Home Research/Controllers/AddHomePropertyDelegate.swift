@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol HomePropertyTableViewDelegate: class {
+protocol AddHomePropertyDelegate: class {
   func didAddNewHomeProperty(_ homeProperty: HomeProperty)
 }
