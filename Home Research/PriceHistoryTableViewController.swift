@@ -11,6 +11,7 @@ import UIKit
 class PriceHistoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   var homeProperty: HomeProperty!
+  @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,15 +28,28 @@ class PriceHistoryTableViewController: UIViewController, UITableViewDataSource, 
   }
   
   
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-   let cell = tableView.dequeueReusableCell(withIdentifier: "AddPriceCell", for: indexPath)
-   
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "AddPriceCell", for: indexPath)
+    
     let date = homeProperty.getPricesToDisplay()[indexPath.row].date
     let price = homeProperty.getPricesToDisplay()[indexPath.row].price
     
     cell.textLabel?.text = TLDateFormatter.shared.getShortStringFromDate(date)
     cell.detailTextLabel?.text = CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: price)
-   
-   return cell
-   }
+    
+    return cell
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let addNewPriceViewController = segue.destination as? AddNewPriceTableViewController {
+      addNewPriceViewController.delegate = self
+    }
+  }
+}
+
+extension PriceHistoryTableViewController: PriceHistoryDelegate {
+  func didAddNewPrice(_ newPrice: Double, atDate date: Date) {
+    homeProperty.addPrice(newPrice, onDate: date)
+    tableView.reloadData()
+  }
 }

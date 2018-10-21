@@ -614,12 +614,116 @@
                         <viewLayoutGuide key="safeArea" id="vyX-zf-gKK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Price History" id="xat-QR-7kA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ME4-zr-XvA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ME4-zr-XvA">
+                            <connections>
+                                <segue destination="T7H-dZ-nbe" kind="presentation" modalPresentationStyle="formSheet" id="zDV-5y-gfp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="3FB-cV-TDg" id="45V-Pz-RNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExG-zf-DLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1690.625" y="1050"/>
+        </scene>
+        <!--Add New Price Table View Controller-->
+        <scene sceneID="77A-KP-hlg">
+            <objects>
+                <tableViewController id="T7H-dZ-nbe" customClass="AddNewPriceTableViewController" customModule="Home_Research" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="O0N-GK-xEx">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection headerTitle="New Price" id="eNz-bb-6dT">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6o3-6d-5P9">
+                                        <rect key="frame" x="0.0" y="28" width="540" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6o3-6d-5P9" id="pWj-ck-fvl">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IXI-A6-Wb8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <items>
+                                                        <navigationItem title="Add New Price" id="ZYE-1S-2fb">
+                                                            <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kpS-1Z-BoJ">
+                                                                <connections>
+                                                                    <action selector="cancelAddingNewPrice:" destination="T7H-dZ-nbe" id="Y76-nW-7dh"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                            <barButtonItem key="rightBarButtonItem" systemItem="save" id="7pq-b5-1LG">
+                                                                <connections>
+                                                                    <action selector="saveNewPrice:" destination="T7H-dZ-nbe" id="oIP-9y-tcY"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                        </navigationItem>
+                                                    </items>
+                                                </navigationBar>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rmp-4U-a3c">
+                                        <rect key="frame" x="0.0" y="72" width="540" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rmp-4U-a3c" id="Bpb-VI-JO0">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$123,456.78" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DsO-9E-LFr">
+                                                    <rect key="frame" x="275" y="6" width="245" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLs-lX-hqs">
+                                                    <rect key="frame" x="20" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="220" id="tfL-Xt-uov">
+                                        <rect key="frame" x="0.0" y="116" width="540" height="220"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tfL-Xt-uov" id="d8S-ez-ZbU">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="219.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TCq-H7-6Sd">
+                                                    <rect key="frame" x="0.0" y="11" width="540" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="561812845.92311299">
+                                                        <!--2018-10-21 11:07:25 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="T7H-dZ-nbe" id="0dV-mL-mNH"/>
+                            <outlet property="delegate" destination="T7H-dZ-nbe" id="fH3-nl-HVD"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="datePicker" destination="TCq-H7-6Sd" id="5Xb-FB-ZPs"/>
+                        <outlet property="newPriceTextField" destination="DsO-9E-LFr" id="bJW-fn-Sba"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCG-aw-a7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2459.375" y="1043.5546875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Szp-0U-Uwy">
