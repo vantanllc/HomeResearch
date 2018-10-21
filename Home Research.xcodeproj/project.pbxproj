@@ -22,11 +22,21 @@
 		8B01E02C214E893100068EA8 /* HomePropertyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E02B214E893100068EA8 /* HomePropertyManager.swift */; };
 		8B01E02E214E8ED600068EA8 /* HomePropertyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E02D214E8ED600068EA8 /* HomePropertyTableViewController.swift */; };
 		8B01E030214E961D00068EA8 /* HomePropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B01E02F214E961D00068EA8 /* HomePropertyTableViewCell.swift */; };
+		8B1B60B821734CC600BEBF9D /* DetailedHomePropertyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B60B721734CC600BEBF9D /* DetailedHomePropertyTableViewController.swift */; };
+		8B1B60BA217357E900BEBF9D /* TLDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B60B9217357E900BEBF9D /* TLDateFormatter.swift */; };
+		8B1B60BC21735C8800BEBF9D /* TLGeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B60BB21735C8800BEBF9D /* TLGeoCoder.swift */; };
+		8B1B60BE21737DDA00BEBF9D /* BarChartViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B60BD21737DDA00BEBF9D /* BarChartViewExtension.swift */; };
 		8B8E2C832157A7CB004D3792 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8E2C822157A7CB004D3792 /* CustomPointAnnotation.swift */; };
 		8BB5D58E21567F220045FE70 /* AddNewHomePropertyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D58D21567F220045FE70 /* AddNewHomePropertyTableViewController.swift */; };
-		8BB5D590215686640045FE70 /* HomePropertyTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D58F215686640045FE70 /* HomePropertyTableViewDelegate.swift */; };
-		8BB5D592215687330045FE70 /* HomePropertyTableViewController+HomePropertyTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D591215687330045FE70 /* HomePropertyTableViewController+HomePropertyTableViewDelegate.swift */; };
+		8BB5D590215686640045FE70 /* AddHomePropertyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D58F215686640045FE70 /* AddHomePropertyDelegate.swift */; };
+		8BB5D592215687330045FE70 /* HomePropertyTableViewController+AddHomePropertyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D591215687330045FE70 /* HomePropertyTableViewController+AddHomePropertyDelegate.swift */; };
 		8BB5D5942156A0100045FE70 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D5932156A0100045FE70 /* CurrencyFormatter.swift */; };
+		8BFC3EE8217C7A9A00AB4E6C /* PriceHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC3EE7217C7A9A00AB4E6C /* PriceHistoryTableViewController.swift */; };
+		8BFC3EEA217C941400AB4E6C /* AddNewPriceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC3EE9217C941400AB4E6C /* AddNewPriceTableViewController.swift */; };
+		8BFC3EEC217C9DF900AB4E6C /* PriceHistoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC3EEB217C9DF900AB4E6C /* PriceHistoryDelegate.swift */; };
+		8BFC3EF1217CA65C00AB4E6C /* AddNewPriceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC3EF0217CA65C00AB4E6C /* AddNewPriceDelegate.swift */; };
+		8BFC3EF3217CAF2700AB4E6C /* DetailedHomePropertyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC3EF2217CAF2700AB4E6C /* DetailedHomePropertyDelegate.swift */; };
+		8BFC3EF5217CAFD900AB4E6C /* HomePropertyTableViewController+DetailedHomePropertyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC3EF4217CAFD900AB4E6C /* HomePropertyTableViewController+DetailedHomePropertyDelegate.swift */; };
 		D44E41F735652B2969470244 /* Pods_Home_ResearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,11 +81,21 @@
 		8B01E02B214E893100068EA8 /* HomePropertyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyManager.swift; sourceTree = "<group>"; };
 		8B01E02D214E8ED600068EA8 /* HomePropertyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyTableViewController.swift; sourceTree = "<group>"; };
 		8B01E02F214E961D00068EA8 /* HomePropertyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyTableViewCell.swift; sourceTree = "<group>"; };
+		8B1B60B721734CC600BEBF9D /* DetailedHomePropertyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHomePropertyTableViewController.swift; sourceTree = "<group>"; };
+		8B1B60B9217357E900BEBF9D /* TLDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLDateFormatter.swift; sourceTree = "<group>"; };
+		8B1B60BB21735C8800BEBF9D /* TLGeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLGeoCoder.swift; sourceTree = "<group>"; };
+		8B1B60BD21737DDA00BEBF9D /* BarChartViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewExtension.swift; sourceTree = "<group>"; };
 		8B8E2C822157A7CB004D3792 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		8BB5D58D21567F220045FE70 /* AddNewHomePropertyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHomePropertyTableViewController.swift; sourceTree = "<group>"; };
-		8BB5D58F215686640045FE70 /* HomePropertyTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePropertyTableViewDelegate.swift; sourceTree = "<group>"; };
-		8BB5D591215687330045FE70 /* HomePropertyTableViewController+HomePropertyTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePropertyTableViewController+HomePropertyTableViewDelegate.swift"; sourceTree = "<group>"; };
+		8BB5D58F215686640045FE70 /* AddHomePropertyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHomePropertyDelegate.swift; sourceTree = "<group>"; };
+		8BB5D591215687330045FE70 /* HomePropertyTableViewController+AddHomePropertyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePropertyTableViewController+AddHomePropertyDelegate.swift"; sourceTree = "<group>"; };
 		8BB5D5932156A0100045FE70 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		8BFC3EE7217C7A9A00AB4E6C /* PriceHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceHistoryTableViewController.swift; sourceTree = "<group>"; };
+		8BFC3EE9217C941400AB4E6C /* AddNewPriceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPriceTableViewController.swift; sourceTree = "<group>"; };
+		8BFC3EEB217C9DF900AB4E6C /* PriceHistoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceHistoryDelegate.swift; sourceTree = "<group>"; };
+		8BFC3EF0217CA65C00AB4E6C /* AddNewPriceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPriceDelegate.swift; sourceTree = "<group>"; };
+		8BFC3EF2217CAF2700AB4E6C /* DetailedHomePropertyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHomePropertyDelegate.swift; sourceTree = "<group>"; };
+		8BFC3EF4217CAFD900AB4E6C /* HomePropertyTableViewController+DetailedHomePropertyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomePropertyTableViewController+DetailedHomePropertyDelegate.swift"; sourceTree = "<group>"; };
 		8E52C7B1F3B7B6079B764F6F /* Pods-Home ResearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home ResearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Home ResearchTests/Pods-Home ResearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		984F5CFC6A5FABB2725D8329 /* Pods-Home Research.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Research.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Home Research/Pods-Home Research.debug.xcconfig"; sourceTree = "<group>"; };
 		A31F84C501387ADA56DD67D6 /* Pods_Home_ResearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Home_ResearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,15 +172,9 @@
 				8B01E000214E742B00068EA8 /* LaunchScreen.storyboard */,
 				8B01E003214E742B00068EA8 /* Info.plist */,
 				8B01DFFB214E742A00068EA8 /* Home_Research.xcdatamodeld */,
-				8B01E027214E7A9C00068EA8 /* HomeProperty.swift */,
-				8B01E02B214E893100068EA8 /* HomePropertyManager.swift */,
-				8B01E02D214E8ED600068EA8 /* HomePropertyTableViewController.swift */,
-				8B01E02F214E961D00068EA8 /* HomePropertyTableViewCell.swift */,
-				8BB5D58D21567F220045FE70 /* AddNewHomePropertyTableViewController.swift */,
-				8BB5D58F215686640045FE70 /* HomePropertyTableViewDelegate.swift */,
-				8BB5D591215687330045FE70 /* HomePropertyTableViewController+HomePropertyTableViewDelegate.swift */,
-				8BB5D5932156A0100045FE70 /* CurrencyFormatter.swift */,
-				8B8E2C822157A7CB004D3792 /* CustomPointAnnotation.swift */,
+				8BFC3EED217CA5C400AB4E6C /* Models */,
+				8BFC3EEE217CA5E300AB4E6C /* Controllers */,
+				8BFC3EEF217CA5F300AB4E6C /* Views */,
 			);
 			path = "Home Research";
 			sourceTree = "<group>";
@@ -183,6 +197,46 @@
 				8B01E019214E742B00068EA8 /* Info.plist */,
 			);
 			path = "Home ResearchUITests";
+			sourceTree = "<group>";
+		};
+		8BFC3EED217CA5C400AB4E6C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E027214E7A9C00068EA8 /* HomeProperty.swift */,
+				8B01E02B214E893100068EA8 /* HomePropertyManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8BFC3EEE217CA5E300AB4E6C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E02D214E8ED600068EA8 /* HomePropertyTableViewController.swift */,
+				8BB5D591215687330045FE70 /* HomePropertyTableViewController+AddHomePropertyDelegate.swift */,
+				8BFC3EF4217CAFD900AB4E6C /* HomePropertyTableViewController+DetailedHomePropertyDelegate.swift */,
+				8B1B60B721734CC600BEBF9D /* DetailedHomePropertyTableViewController.swift */,
+				8BFC3EF2217CAF2700AB4E6C /* DetailedHomePropertyDelegate.swift */,
+				8BB5D58D21567F220045FE70 /* AddNewHomePropertyTableViewController.swift */,
+				8BB5D58F215686640045FE70 /* AddHomePropertyDelegate.swift */,
+				8BFC3EE7217C7A9A00AB4E6C /* PriceHistoryTableViewController.swift */,
+				8BFC3EEB217C9DF900AB4E6C /* PriceHistoryDelegate.swift */,
+				8BFC3EE9217C941400AB4E6C /* AddNewPriceTableViewController.swift */,
+				8BFC3EF0217CA65C00AB4E6C /* AddNewPriceDelegate.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8BFC3EEF217CA5F300AB4E6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B01E02F214E961D00068EA8 /* HomePropertyTableViewCell.swift */,
+				8BB5D5932156A0100045FE70 /* CurrencyFormatter.swift */,
+				8B8E2C822157A7CB004D3792 /* CustomPointAnnotation.swift */,
+				8B1B60B9217357E900BEBF9D /* TLDateFormatter.swift */,
+				8B1B60BB21735C8800BEBF9D /* TLGeoCoder.swift */,
+				8B1B60BD21737DDA00BEBF9D /* BarChartViewExtension.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		96902A8459D070D49F9BC849 /* Pods */ = {
@@ -373,11 +427,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Home Research/Pods-Home Research-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 			);
@@ -432,14 +488,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B01DFFD214E742A00068EA8 /* Home_Research.xcdatamodeld in Sources */,
+				8B1B60BC21735C8800BEBF9D /* TLGeoCoder.swift in Sources */,
 				8B01E02C214E893100068EA8 /* HomePropertyManager.swift in Sources */,
-				8BB5D592215687330045FE70 /* HomePropertyTableViewController+HomePropertyTableViewDelegate.swift in Sources */,
-				8BB5D590215686640045FE70 /* HomePropertyTableViewDelegate.swift in Sources */,
+				8BB5D592215687330045FE70 /* HomePropertyTableViewController+AddHomePropertyDelegate.swift in Sources */,
+				8BB5D590215686640045FE70 /* AddHomePropertyDelegate.swift in Sources */,
 				8B8E2C832157A7CB004D3792 /* CustomPointAnnotation.swift in Sources */,
+				8B1B60BA217357E900BEBF9D /* TLDateFormatter.swift in Sources */,
+				8B1B60B821734CC600BEBF9D /* DetailedHomePropertyTableViewController.swift in Sources */,
 				8B01DFF5214E742900068EA8 /* AppDelegate.swift in Sources */,
+				8BFC3EF1217CA65C00AB4E6C /* AddNewPriceDelegate.swift in Sources */,
 				8B01E030214E961D00068EA8 /* HomePropertyTableViewCell.swift in Sources */,
+				8B1B60BE21737DDA00BEBF9D /* BarChartViewExtension.swift in Sources */,
+				8BFC3EF5217CAFD900AB4E6C /* HomePropertyTableViewController+DetailedHomePropertyDelegate.swift in Sources */,
 				8BB5D58E21567F220045FE70 /* AddNewHomePropertyTableViewController.swift in Sources */,
 				8B01E02E214E8ED600068EA8 /* HomePropertyTableViewController.swift in Sources */,
+				8BFC3EF3217CAF2700AB4E6C /* DetailedHomePropertyDelegate.swift in Sources */,
+				8BFC3EEC217C9DF900AB4E6C /* PriceHistoryDelegate.swift in Sources */,
+				8BFC3EE8217C7A9A00AB4E6C /* PriceHistoryTableViewController.swift in Sources */,
+				8BFC3EEA217C941400AB4E6C /* AddNewPriceTableViewController.swift in Sources */,
 				8B01E028214E7A9C00068EA8 /* HomeProperty.swift in Sources */,
 				8BB5D5942156A0100045FE70 /* CurrencyFormatter.swift in Sources */,
 			);
