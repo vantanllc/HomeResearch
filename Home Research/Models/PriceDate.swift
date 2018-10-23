@@ -12,7 +12,7 @@ class PriceDate: NSObject {
   var date: Date?
   var price: Double?
   
-  init(date: Date, price: Double) {
+  init(date: Date?, price: Double?) {
     self.date = date
     self.price = price
   }

@@ -35,8 +35,9 @@ private struct Static {
         account1.salesDate = Date.init(timeIntervalSinceNow: 10)
         account1.address = "1451 E Bell Ave Des Moines, Iowa 50320"
         let priceDate = PriceDate(date: Date.init(timeIntervalSinceNow: 0), price: 80000.00)
-        let data = NSKeyedArchiver.archivedData(withRootObject:
+        let data = NSKeyedArchiver.archivedData(withRootObject: [
             priceDate
+          ]
         )
         account1.prices = data
     }
@@ -51,23 +52,26 @@ class HomePropertyManager {
   init() {
     let homePropertyModels = Static.homePropertyModelStack.fetchAll(From(HomePropertyModel.self)) ?? []
     
-    
-    
-    homeProperties = Set(homePropertyModels.map {model in
-      let priceDates = NSKeyedUnarchiver.unarchiveObject(with: model.prices!) as! PriceDate
+    homeProperties = Set(homePropertyModels.compactMap {model in
+      let sheriffNumber = Int(model.sheriffNumber)
+      let judgementPrice = model.judgementPrice
+      guard let salesDate = model.salesDate,
+            let address = model.address,
+            let prices = model.prices,
+            let priceDates = NSKeyedUnarchiver.unarchiveObject(with: prices) as? [PriceDate]
+      else {
+        return nil
+      }
       
       let homeProperty = HomeProperty(
-        sheriffNumber: Int(model.sheriffNumber),
-        judgementPrice: model.judgementPrice,
-        salesDate: model.salesDate!,
-        address: model.address!,
-        prices: [(priceDates.date!, priceDates.price!)]
+        sheriffNumber: sheriffNumber,
+        judgementPrice: judgementPrice,
+        salesDate: salesDate,
+        address: address,
+        prices: [(priceDates[0].date!, priceDates[0].price!)]
       )
       return homeProperty
     })
-    
-    
-//    homeProperties = Static.homePropertyModelStack.fetchAll(From(HomePropertyModel.self)) ?? Set<HomePropertyModel>
   }
   
   func addNewHomeProperty(_ newHomeProperty: HomeProperty) {

@@ -17,8 +17,6 @@ class HomePropertyTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    homePropertyManager.addNewHomeProperty(HomeProperty.createRandomHomeProperty())
-//    homePropertyManager.addNewHomeProperty(HomeProperty.createRandomHomeProperty())
   }
   
   override func didReceiveMemoryWarning() {
