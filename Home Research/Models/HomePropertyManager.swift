@@ -27,12 +27,17 @@ private struct Static {
     return dataStack
   }()
   
+  static func deleteAllHomePropertyModels() {
+    _ = try? Static.homePropertyModelStack.perform(
+      synchronous: { (transaction) in
+        transaction.deleteAll(From<HomePropertyModel>())
+    }
+    )
+  }
+  
   static func writeNewHomeProperty(_ homeProperty: HomeProperty) {
     _ = try? Static.homePropertyModelStack.perform(
       synchronous: { (transaction) in
-        
-        transaction.deleteAll(From<HomePropertyModel>())
-        
         let homePropertyModel = transaction.create(Into<HomePropertyModel>())
         homePropertyModel.sheriffNumber = Int32(homeProperty.sheriffNumber)
         homePropertyModel.judgementPrice = homeProperty.judgementPrice
@@ -48,8 +53,6 @@ class HomePropertyManager {
   private var homeProperties: Set<HomeProperty>
   
   init() {
-    Static.writeNewHomeProperty(HomeProperty.createRandomHomeProperty())
-    
     let homePropertyModels = Static.homePropertyModelStack.fetchAll(From(HomePropertyModel.self)) ?? []
     
     homeProperties = Set(homePropertyModels.compactMap {model in
@@ -78,6 +81,8 @@ class HomePropertyManager {
 extension HomePropertyManager {
   func addNewHomeProperty(_ newHomeProperty: HomeProperty) {
     homeProperties.insert(newHomeProperty)
+    Static.writeNewHomeProperty(newHomeProperty)
+
   }
   
   func getHomePropertiesCount() -> Int {
