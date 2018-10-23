@@ -7,9 +7,68 @@
 //
 
 import Foundation
+import CoreStore
+
+private struct Static {
+  
+  static let homePropertyModelConfiguration = "Default"
+  
+  static let homePropertyModelStack: DataStack = {
+    
+    let dataStack = DataStack(xcodeModelName: "Home_Research")
+    try! dataStack.addStorageAndWait(
+      SQLiteStore(
+        fileName: "HomeResearchHomePropertyModel.sqlite",
+        configuration: homePropertyModelConfiguration,
+        localStorageOptions: .recreateStoreOnModelMismatch
+      )
+    )
+    
+    _ = try? dataStack.perform(
+      synchronous: { (transaction) in
+        
+        transaction.deleteAll(From<HomePropertyModel>())
+        
+        let account1 = transaction.create(Into<HomePropertyModel>())
+        account1.sheriffNumber = 123456
+        account1.judgementPrice = 123.34
+        account1.salesDate = Date.init(timeIntervalSinceNow: 10)
+        account1.address = "1451 E Bell Ave Des Moines, Iowa 50320"
+        let priceDate = PriceDate(date: Date.init(timeIntervalSinceNow: 0), price: 80000.00)
+        let data = NSKeyedArchiver.archivedData(withRootObject:
+            priceDate
+        )
+        account1.prices = data
+    }
+    )
+    return dataStack
+  }()
+}
 
 class HomePropertyManager {
-  private var homeProperties = Set<HomeProperty>()
+  private var homeProperties: Set<HomeProperty>
+  
+  init() {
+    let homePropertyModels = Static.homePropertyModelStack.fetchAll(From(HomePropertyModel.self)) ?? []
+    
+    
+    
+    homeProperties = Set(homePropertyModels.map {model in
+      let priceDates = NSKeyedUnarchiver.unarchiveObject(with: model.prices!) as! PriceDate
+      
+      let homeProperty = HomeProperty(
+        sheriffNumber: Int(model.sheriffNumber),
+        judgementPrice: model.judgementPrice,
+        salesDate: model.salesDate!,
+        address: model.address!,
+        prices: [(priceDates.date!, priceDates.price!)]
+      )
+      return homeProperty
+    })
+    
+    
+//    homeProperties = Static.homePropertyModelStack.fetchAll(From(HomePropertyModel.self)) ?? Set<HomePropertyModel>
+  }
   
   func addNewHomeProperty(_ newHomeProperty: HomeProperty) {
     homeProperties.insert(newHomeProperty)

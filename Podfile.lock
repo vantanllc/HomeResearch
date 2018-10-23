@@ -2,12 +2,14 @@ PODS:
   - Charts (3.1.1):
     - Charts/Core (= 3.1.1)
   - Charts/Core (3.1.1)
+  - CoreStore (5.3.0)
   - Mapbox-iOS-SDK (4.4.0)
   - Nimble (7.0.3)
   - Quick (1.2.0)
 
 DEPENDENCIES:
   - Charts (= 3.1.1)
+  - CoreStore (= 5.3)
   - Mapbox-iOS-SDK (= 4.4)
   - Nimble
   - Quick
@@ -15,16 +17,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Charts
+    - CoreStore
     - Mapbox-iOS-SDK
     - Nimble
     - Quick
 
 SPEC CHECKSUMS:
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
+  CoreStore: 6d2d5e7841e9b1f5d452b5ab881e478cf37f540e
   Mapbox-iOS-SDK: 677d21898749062a5083be78a4d15d245dd7a724
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
-PODFILE CHECKSUM: 9c160a61bc113b4fd91b2e98de5bfc9741354b02
+PODFILE CHECKSUM: 8fb66592661e173dcc04f732159952b25525e34a
 
 COCOAPODS: 1.5.3
