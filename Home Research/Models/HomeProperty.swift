@@ -9,7 +9,7 @@
 import Foundation
 
 struct HomeProperty {
-  let sheriffNumber: Int
+  let sheriffNumber: UInt
   let judgementPrice: Double
   let salesDate: Date
   let address: String
@@ -32,7 +32,7 @@ struct HomeProperty {
 
 extension HomeProperty {
   static func createRandomHomeProperty() -> HomeProperty {
-    return HomeProperty(sheriffNumber: Int(arc4random()), judgementPrice: drand48() * 100000, salesDate: Date.init(), address: "1451 E Bell Ave, Des Moines, Iowa", prices: [PriceDate(date: Date.init(timeIntervalSinceNow: 0), price: 80000),PriceDate(date: Date.init(timeIntervalSinceNow: 100000), price: 100000)])
+    return HomeProperty(sheriffNumber: UInt(arc4random()), judgementPrice: drand48() * 100000, salesDate: Date.init(), address: "1451 E Bell Ave, Des Moines, Iowa", prices: [PriceDate(date: Date.init(timeIntervalSinceNow: 0), price: 80000),PriceDate(date: Date.init(timeIntervalSinceNow: 100000), price: 100000)])
   }
 }
 

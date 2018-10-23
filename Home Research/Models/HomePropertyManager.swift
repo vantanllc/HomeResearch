@@ -24,36 +24,36 @@ private struct Static {
       )
     )
     
-    _ = try? dataStack.perform(
+    return dataStack
+  }()
+  
+  static func writeNewHomeProperty(_ homeProperty: HomeProperty) {
+    _ = try? Static.homePropertyModelStack.perform(
       synchronous: { (transaction) in
         
         transaction.deleteAll(From<HomePropertyModel>())
         
-        let account1 = transaction.create(Into<HomePropertyModel>())
-        account1.sheriffNumber = 123456
-        account1.judgementPrice = 123.34
-        account1.salesDate = Date.init(timeIntervalSinceNow: 10)
-        account1.address = "1451 E Bell Ave Des Moines, Iowa 50320"
-        let priceDate = PriceDate(date: Date.init(timeIntervalSinceNow: 0), price: 80000.00)
-        let data = NSKeyedArchiver.archivedData(withRootObject: [
-            priceDate
-          ]
-        )
-        account1.prices = data
+        let homePropertyModel = transaction.create(Into<HomePropertyModel>())
+        homePropertyModel.sheriffNumber = Int32(homeProperty.sheriffNumber)
+        homePropertyModel.judgementPrice = homeProperty.judgementPrice
+        homePropertyModel.salesDate = homeProperty.salesDate
+        homePropertyModel.address = homeProperty.address
+        homePropertyModel.prices = NSKeyedArchiver.archivedData(withRootObject: homeProperty.prices)
     }
     )
-    return dataStack
-  }()
+  }
 }
 
 class HomePropertyManager {
   private var homeProperties: Set<HomeProperty>
   
   init() {
+    Static.writeNewHomeProperty(HomeProperty.createRandomHomeProperty())
+    
     let homePropertyModels = Static.homePropertyModelStack.fetchAll(From(HomePropertyModel.self)) ?? []
     
     homeProperties = Set(homePropertyModels.compactMap {model in
-      let sheriffNumber = Int(model.sheriffNumber)
+      let sheriffNumber = UInt(model.sheriffNumber)
       let judgementPrice = model.judgementPrice
       guard let salesDate = model.salesDate,
             let address = model.address,
@@ -73,7 +73,9 @@ class HomePropertyManager {
       return homeProperty
     })
   }
-  
+}
+
+extension HomePropertyManager {
   func addNewHomeProperty(_ newHomeProperty: HomeProperty) {
     homeProperties.insert(newHomeProperty)
   }
