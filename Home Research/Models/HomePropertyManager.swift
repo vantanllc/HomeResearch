@@ -68,7 +68,7 @@ class HomePropertyManager {
         judgementPrice: judgementPrice,
         salesDate: salesDate,
         address: address,
-        prices: [(priceDates[0].date!, priceDates[0].price!)]
+        prices: priceDates
       )
       return homeProperty
     })

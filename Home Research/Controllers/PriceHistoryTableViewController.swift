@@ -35,6 +35,7 @@ class PriceHistoryTableViewController: UIViewController, UITableViewDataSource, 
     let date = homeProperty.getPricesToDisplay()[indexPath.row].date
     let price = homeProperty.getPricesToDisplay()[indexPath.row].price
     
+    
     cell.textLabel?.text = TLDateFormatter.shared.getShortStringFromDate(date)
     cell.detailTextLabel?.text = CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: price)
     

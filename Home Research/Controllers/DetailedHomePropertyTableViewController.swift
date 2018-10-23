@@ -43,8 +43,8 @@ class DetailedHomePropertyTableViewController: UITableViewController {
   }
   
   func loadBarChart() {
-    let xValues = homeProperty.prices.map {TLDateFormatter.shared.getShortStringFromDate($0.date)}
-    let yValues = homeProperty.prices.map {$0.price}
+    let xValues = homeProperty.prices.compactMap {TLDateFormatter.shared.getShortStringFromDate($0.date)}
+    let yValues = homeProperty.prices.compactMap {$0.price}
     
     barChartView.autoScaleMinMaxEnabled = false
     barChartView.setBarChartData(xValues: xValues, yValues: yValues, label: "$")

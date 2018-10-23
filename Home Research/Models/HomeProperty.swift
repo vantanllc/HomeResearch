@@ -13,26 +13,26 @@ struct HomeProperty {
   let judgementPrice: Double
   let salesDate: Date
   let address: String
-  var prices: [(date: Date, price: Double)]
+  var prices: [PriceDate]
   
   mutating func addPrice(_ price: Double, onDate date: Date) {
-    prices.append((date, price))
+    prices.append(PriceDate(date: date, price: price))
   }
   
-  mutating func deletePrice(_ priceToDelete: Double, onDate date: Date) {
+  mutating func deletePrice(_ priceToDelete: Double?, onDate date: Date?) {
     prices = prices.filter {price in
       return !(price.date == date && price.price == priceToDelete)
     }
   }
   
-  func getPricesToDisplay() -> [(date: Date, price: Double)] {
+  func getPricesToDisplay() -> [PriceDate] {
     return prices.reversed()
   }
 }
 
 extension HomeProperty {
   static func createRandomHomeProperty() -> HomeProperty {
-    return HomeProperty(sheriffNumber: Int(arc4random()), judgementPrice: drand48() * 100000, salesDate: Date.init(), address: "1451 E Bell Ave, Des Moines, Iowa", prices: [(Date.init(timeIntervalSinceNow: 0),80000),(Date.init(timeIntervalSinceNow: 100000),100000)])
+    return HomeProperty(sheriffNumber: Int(arc4random()), judgementPrice: drand48() * 100000, salesDate: Date.init(), address: "1451 E Bell Ave, Des Moines, Iowa", prices: [PriceDate(date: Date.init(timeIntervalSinceNow: 0), price: 80000),PriceDate(date: Date.init(timeIntervalSinceNow: 100000), price: 100000)])
   }
 }
 
