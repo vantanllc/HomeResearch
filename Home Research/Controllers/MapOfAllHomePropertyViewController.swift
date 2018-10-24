@@ -14,9 +14,16 @@ class MapOfAllHomePropertyViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    mapView.delegate = self
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+  }
+}
+
+extension MapOfAllHomePropertyViewController: MGLMapViewDelegate {
+  func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
+    return true
   }
 }

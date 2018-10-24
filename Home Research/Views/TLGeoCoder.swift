@@ -27,6 +27,18 @@ class TLGeoCoder {
     mapView.addAnnotation(point)
   }
   
+  func addHomePropertyMapAnnotation(withAddress address: String,
+                        atCoordinate coordinate: CLLocationCoordinate2D,
+                        forHomeProperty homeProperty: HomeProperty,
+                        toMapView mapView: MGLMapView) {
+    let point = CustomPointAnnotation(coordinate: coordinate,
+                                      title: "\(homeProperty.sheriffNumber)",
+                                      subtitle: homeProperty.address)
+    
+    point.reuseIdentifier = "customMapAnnotation"
+    mapView.addAnnotation(point)
+  }
+  
   func geocodeAddressString(_ address: String, completionHandler: @escaping ([CLPlacemark]?, Error?) -> Void) {
     geoCoder.geocodeAddressString(address, completionHandler: completionHandler)
   }

@@ -32,7 +32,7 @@ class HomePropertyTableViewController: UITableViewController {
                 return
             }
             
-            TLGeoCoder.shared.addMapAnnotation(withAddress: homeProperty.address, atCoordinate: location.coordinate, toMapView: detailVC.mapView)
+            TLGeoCoder.shared.addHomePropertyMapAnnotation(withAddress: homeProperty.address, atCoordinate: location.coordinate, forHomeProperty: homeProperty, toMapView: detailVC.mapView)
           }
         })
       }
@@ -84,6 +84,5 @@ class HomePropertyTableViewController: UITableViewController {
     }
   }
 }
-
 
 
