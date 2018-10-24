@@ -92,6 +92,10 @@ class HomePropertyManager {
 }
 
 extension HomePropertyManager {
+  func getAllHomeProperty() -> [HomeProperty] {
+    return Array(homeProperties)
+  }
+  
   func addNewHomeProperty(_ newHomeProperty: HomeProperty) {
     homeProperties.insert(newHomeProperty)
     Static.writeNewHomeProperty(newHomeProperty)

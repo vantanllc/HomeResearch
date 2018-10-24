@@ -9,14 +9,34 @@
 import UIKit
 import CoreStore
 
-
-
 class HomePropertyTableViewController: UITableViewController {
   let homePropertyManager = HomePropertyManager()
   var selectedHomeProperty: HomeProperty?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    if let splitVC = self.splitViewController,
+      let detailVC = splitVC.viewControllers[1] as? MapOfAllHomePropertyViewController {
+      for (index, homeProperty) in homePropertyManager.getAllHomeProperty().enumerated() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(index*400), execute: {
+          TLGeoCoder.shared.geocodeAddressString(homeProperty.address) { (placemarks, error) in
+            guard
+              let placemarks = placemarks,
+              let location = placemarks.first?.location
+              else {
+                return
+            }
+            
+            TLGeoCoder.shared.addMapAnnotation(withAddress: homeProperty.address, atCoordinate: location.coordinate, toMapView: detailVC.mapView)
+          }
+        })
+      }
+    }
   }
   
   override func didReceiveMemoryWarning() {
