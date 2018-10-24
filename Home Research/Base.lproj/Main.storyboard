@@ -277,7 +277,12 @@
                                                     <items>
                                                         <barButtonItem title="Price History" id="jhf-1M-Ju7">
                                                             <connections>
-                                                                <segue destination="pV6-0L-i4g" kind="show" id="aBx-iG-Oj6"/>
+                                                                <segue destination="pV6-0L-i4g" kind="modal" modalPresentationStyle="formSheet" id="aBx-iG-Oj6"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem title="Add New Price" id="T6g-18-a40">
+                                                            <connections>
+                                                                <segue destination="T7H-dZ-nbe" kind="presentation" modalPresentationStyle="formSheet" id="0cT-gE-1Bv"/>
                                                             </connections>
                                                         </barButtonItem>
                                                     </items>
@@ -471,15 +476,15 @@
             <objects>
                 <viewController id="pV6-0L-i4g" customClass="PriceHistoryTableViewController" customModule="Home_Research" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KLV-0Y-Te2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3FB-cV-TDg">
-                                <rect key="frame" x="0.0" y="64" width="768" height="916"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="960"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddPriceCell" textLabel="AoE-wX-wg7" detailTextLabel="nVC-bz-prY" style="IBUITableViewCellStyleValue1" id="Dve-6W-iGI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddPriceCell" textLabel="AoE-wX-wg7" detailTextLabel="nVC-bz-prY" style="IBUITableViewCellStyleValue1" id="Dve-6W-iGI">
                                         <rect key="frame" x="0.0" y="28" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dve-6W-iGI" id="Awo-Jo-bEO">
@@ -514,11 +519,7 @@
                         <viewLayoutGuide key="safeArea" id="vyX-zf-gKK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Price History" id="xat-QR-7kA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ME4-zr-XvA">
-                            <connections>
-                                <segue destination="T7H-dZ-nbe" kind="presentation" modalPresentationStyle="formSheet" id="zDV-5y-gfp"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ME4-zr-XvA"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="3FB-cV-TDg" id="45V-Pz-RNg"/>
@@ -623,7 +624,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCG-aw-a7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2459.375" y="1043.5546875"/>
+            <point key="canvasLocation" x="1009" y="1823"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cfN-Hq-As2">
@@ -730,7 +731,7 @@
                                     <outlet property="judgementPriceLabel" destination="3jq-PA-eqX" id="dsT-Cj-tsM"/>
                                     <outlet property="salesDateLabel" destination="gW1-WL-o0R" id="tsS-kG-qGZ"/>
                                     <outlet property="sheriffNumberLabel" destination="cBN-TL-fqg" id="j3E-dQ-bzr"/>
-                                    <segue destination="Djw-mk-0jq" kind="show" id="0lM-Jz-xeD"/>
+                                    <segue destination="Djw-mk-0jq" kind="showDetail" id="0lM-Jz-xeD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
