@@ -40,7 +40,7 @@ class HomePropertyTableViewController: UITableViewController {
     let homeProperty = homePropertyManager.getHomePropertyAtIndex(indexPath.row)
     
     cell.sheriffNumberLabel.text = "\(homeProperty.sheriffNumber)"
-    cell.salesDateLabel.text = "\(homeProperty.salesDate)"
+    cell.salesDateLabel.text = TLDateFormatter.shared.getShortStringFromDate(homeProperty.salesDate)
     cell.addressLabel.text = "\(homeProperty.address)"
     cell.judgementPriceLabel.text = "\(CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: homeProperty.judgementPrice))"
     cell.resizeLabels()
