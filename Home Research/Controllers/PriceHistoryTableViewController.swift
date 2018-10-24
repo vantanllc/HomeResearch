@@ -93,18 +93,4 @@ extension PriceHistoryTableViewController: UITableViewDataSource, UITableViewDel
       delegate?.didUpdateHomeProperty(homeProperty)
     }
   }
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let addNewPriceViewController = segue.destination as? AddNewPriceTableViewController {
-      addNewPriceViewController.delegate = self
-    }
-  }
-}
-
-extension PriceHistoryTableViewController: AddNewPriceDelegate {
-  func didAddNewPrice(_ newPrice: Double, atDate date: Date) {
-    homeProperty.addPrice(newPrice, onDate: date)
-    tableView.reloadData()
-    delegate?.didUpdateHomeProperty(homeProperty)
-  }
 }

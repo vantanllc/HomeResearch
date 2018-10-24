@@ -62,6 +62,17 @@ class DetailedHomePropertyTableViewController: UITableViewController {
       priceHistoryViewController.homeProperty = homeProperty
       priceHistoryViewController.delegate = self
     }
+    if let addNewPriceViewController = segue.destination as? AddNewPriceTableViewController {
+      addNewPriceViewController.delegate = self
+    }
+  }
+}
+
+extension DetailedHomePropertyTableViewController: AddNewPriceDelegate {
+  func didAddNewPrice(_ newPrice: Double, atDate date: Date) {
+    homeProperty.addPrice(newPrice, onDate: date)
+    loadBarChart()
+    delegate?.didUpdateHomeProperty(homeProperty)
   }
 }
 
