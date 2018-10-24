@@ -28,6 +28,10 @@ struct HomeProperty {
   func getPricesToDisplay() -> [PriceDate] {
     return prices.reversed()
   }
+  
+  func getPricesAsData() -> Data {
+    return NSKeyedArchiver.archivedData(withRootObject: prices)
+  }
 }
 
 extension HomeProperty {

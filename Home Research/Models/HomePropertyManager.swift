@@ -35,6 +35,19 @@ private struct Static {
     )
   }
   
+  static func updateHomeProperty(_ homeProperty: HomeProperty) {
+    _ = try? Static.homePropertyModelStack.perform(
+      synchronous: { (transaction) in
+        let homePropertyModel = transaction.fetchOne(
+          From<HomePropertyModel>()
+            .where(\.sheriffNumber == Int32(homeProperty.sheriffNumber))
+        )
+        
+        homePropertyModel?.prices = homeProperty.getPricesAsData()
+    }, waitForAllObservers: false
+    )
+  }
+  
   static func writeNewHomeProperty(_ homeProperty: HomeProperty) {
     _ = try? Static.homePropertyModelStack.perform(
       synchronous: { (transaction) in
@@ -43,7 +56,7 @@ private struct Static {
         homePropertyModel.judgementPrice = homeProperty.judgementPrice
         homePropertyModel.salesDate = homeProperty.salesDate
         homePropertyModel.address = homeProperty.address
-        homePropertyModel.prices = NSKeyedArchiver.archivedData(withRootObject: homeProperty.prices)
+        homePropertyModel.prices = homeProperty.getPricesAsData()
     }
     )
   }
@@ -82,7 +95,6 @@ extension HomePropertyManager {
   func addNewHomeProperty(_ newHomeProperty: HomeProperty) {
     homeProperties.insert(newHomeProperty)
     Static.writeNewHomeProperty(newHomeProperty)
-
   }
   
   func getHomePropertiesCount() -> Int {
@@ -97,6 +109,7 @@ extension HomePropertyManager {
   
   func updateHomeProperty(_ updatedHomeProperty: HomeProperty) {
     homeProperties.update(with: updatedHomeProperty)
+    Static.updateHomeProperty(updatedHomeProperty)
   }
 }
 
