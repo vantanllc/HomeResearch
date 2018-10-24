@@ -48,7 +48,7 @@ class AddNewHomePropertyTableViewController: UITableViewController {
   
   @IBAction func saveNewHomeProperty(_ sender: Any) {
     let newHomeProperty = HomeProperty(
-      sheriffNumber: Int(sheriffNumberTextField.text!)!,
+      sheriffNumber: UInt(sheriffNumberTextField.text!)!,
       judgementPrice: Double(judgementPriceTextField.text!)!,
       salesDate: salesDatePicker.date,
       address: fullAddress,

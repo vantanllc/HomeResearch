@@ -21,7 +21,11 @@ class CurrencyFormatter {
     numberFormatter.maximumFractionDigits = 2
   }
   
-  func convertPriceToCurrencyFormat(price: Double) -> String {
+  func convertPriceToCurrencyFormat(price: Double?) -> String {
+    guard let price = price else {
+      return "NA"
+    }
+    
     return "$\(String(describing: numberFormatter.string(from: price as NSNumber)!))"
   }
 }

@@ -14,6 +14,7 @@ target 'Home Research' do
   # Pods for Home Research
   pod 'Mapbox-iOS-SDK', '= 4.4'
   pod 'Charts', '= 3.1.1'
+  pod 'CoreStore', '= 5.3'
 
   target 'Home ResearchTests' do
     inherit! :search_paths
