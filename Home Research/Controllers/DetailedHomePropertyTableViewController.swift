@@ -21,6 +21,8 @@ class DetailedHomePropertyTableViewController: UITableViewController {
   @IBOutlet weak var mapView: MGLMapView!
   @IBOutlet weak var barChartView: BarChartView!
   
+  var tapBGGesture: UITapGestureRecognizer!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -40,6 +42,18 @@ class DetailedHomePropertyTableViewController: UITableViewController {
       
       TLGeoCoder.shared.addMapAnnotation(withAddress: self.homeProperty.address, atCoordinate: location.coordinate, toMapView: self.mapView)
     }
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    tapBGGesture = UITapGestureRecognizer(target: self, action: #selector(onTap(sender:)))
+    tapBGGesture.delegate = self
+    tapBGGesture.numberOfTapsRequired = 1
+    tapBGGesture.cancelsTouchesInView = false
+    self.view.window!.addGestureRecognizer(tapBGGesture)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    self.view.window!.removeGestureRecognizer(tapBGGesture)
   }
   
   func loadBarChart() {
@@ -65,6 +79,28 @@ class DetailedHomePropertyTableViewController: UITableViewController {
     if let addNewPriceViewController = segue.destination as? AddNewPriceTableViewController {
       addNewPriceViewController.delegate = self
     }
+  }
+}
+
+extension DetailedHomePropertyTableViewController: UIGestureRecognizerDelegate {
+  @objc private func onTap(sender: UITapGestureRecognizer) {
+    self.view.window?.removeGestureRecognizer(sender)
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+  internal func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    let location = touch.location(in: self.view)
+    
+    if self.view.point(inside: location, with: nil) {
+      return false
+    }
+    else {
+      return true
+    }
+  }
+  
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    return true
   }
 }
 

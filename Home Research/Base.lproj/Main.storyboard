@@ -755,7 +755,7 @@
                                     <outlet property="judgementPriceLabel" destination="3jq-PA-eqX" id="dsT-Cj-tsM"/>
                                     <outlet property="salesDateLabel" destination="gW1-WL-o0R" id="tsS-kG-qGZ"/>
                                     <outlet property="sheriffNumberLabel" destination="cBN-TL-fqg" id="j3E-dQ-bzr"/>
-                                    <segue destination="Djw-mk-0jq" kind="showDetail" id="0lM-Jz-xeD"/>
+                                    <segue destination="Djw-mk-0jq" kind="presentation" modalPresentationStyle="pageSheet" id="0lM-Jz-xeD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
