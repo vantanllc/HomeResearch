@@ -35,6 +35,18 @@ private struct Static {
     )
   }
   
+  static func deleteHomeProperty(_ homeProperty: HomeProperty) {
+    _ = try? Static.homePropertyModelStack.perform(
+      synchronous: { (transaction) in
+        let homePropertyModel = transaction.fetchOne(
+          From<HomePropertyModel>()
+            .where(\.sheriffNumber == Int32(homeProperty.sheriffNumber))
+        )
+        transaction.delete(homePropertyModel)
+    }
+    )
+  }
+  
   static func updateHomeProperty(_ homeProperty: HomeProperty) {
     _ = try? Static.homePropertyModelStack.perform(
       synchronous: { (transaction) in
@@ -99,6 +111,11 @@ extension HomePropertyManager {
   func addNewHomeProperty(_ newHomeProperty: HomeProperty) {
     homeProperties.insert(newHomeProperty)
     Static.writeNewHomeProperty(newHomeProperty)
+  }
+  
+  func deleteHomeProperty(_ homeProperty: HomeProperty) {
+    homeProperties.remove(homeProperty)
+    Static.deleteHomeProperty(homeProperty)
   }
   
   func getHomePropertiesCount() -> Int {
