@@ -12,6 +12,16 @@ import CoreStore
 class HomePropertyTableViewController: UITableViewController {
   let homePropertyManager = HomePropertyManager()
   var selectedHomeProperty: HomeProperty?
+  var detailedVC: MapOfAllHomePropertyViewController? {
+    get {
+      if let splitVC = self.splitViewController,
+        let detailVC = splitVC.viewControllers[1] as? MapOfAllHomePropertyViewController {
+        return detailVC
+      } else {
+        return nil
+      }
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,9 +30,8 @@ class HomePropertyTableViewController: UITableViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    if let splitVC = self.splitViewController,
-      let detailVC = splitVC.viewControllers[1] as? MapOfAllHomePropertyViewController {
-      TLGeoCoder.shared.addHomeProperties(homePropertyManager.getAllHomeProperty(), toMapView: detailVC.mapView)
+    if let detailedVC = detailedVC {
+      TLGeoCoder.shared.addHomeProperties(homePropertyManager.getAllHomeProperty(), toMapView: detailedVC.mapView)
     }
   }
   

@@ -11,6 +11,9 @@ import Foundation
 extension HomePropertyTableViewController: AddHomePropertyDelegate {
   func didAddNewHomeProperty(_ homeProperty: HomeProperty) {
     homePropertyManager.addNewHomeProperty(homeProperty)
+    if let detailedVC = detailedVC {
+      TLGeoCoder.shared.addHomeProperty(homeProperty, toMapView: detailedVC.mapView)
+    }
     
     tableView.reloadData()
   }
