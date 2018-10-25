@@ -22,20 +22,7 @@ class HomePropertyTableViewController: UITableViewController {
     
     if let splitVC = self.splitViewController,
       let detailVC = splitVC.viewControllers[1] as? MapOfAllHomePropertyViewController {
-      for (index, homeProperty) in homePropertyManager.getAllHomeProperty().enumerated() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(index*600), execute: {
-          TLGeoCoder.shared.geocodeAddressString(homeProperty.address) { (placemarks, error) in
-            guard
-              let placemarks = placemarks,
-              let location = placemarks.first?.location
-              else {
-                return
-            }
-            
-            TLGeoCoder.shared.addHomePropertyMapAnnotation(withAddress: homeProperty.address, atCoordinate: location.coordinate, forHomeProperty: homeProperty, toMapView: detailVC.mapView)
-          }
-        })
-      }
+      TLGeoCoder.shared.addHomeProperties(homePropertyManager.getAllHomeProperty(), toMapView: detailVC.mapView)
     }
   }
   

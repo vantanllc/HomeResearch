@@ -27,6 +27,27 @@ class TLGeoCoder {
     mapView.addAnnotation(point)
   }
   
+  func addHomeProperty(_ homeProperty: HomeProperty, toMapView mapView: MGLMapView) {
+    TLGeoCoder.shared.geocodeAddressString(homeProperty.address) { (placemarks, error) in
+      guard
+        let placemarks = placemarks,
+        let location = placemarks.first?.location
+        else {
+          return
+      }
+      
+      TLGeoCoder.shared.addHomePropertyMapAnnotation(withAddress: homeProperty.address, atCoordinate: location.coordinate, forHomeProperty: homeProperty, toMapView: mapView)
+    }
+  }
+  
+  func addHomeProperties(_ homeProperties: [HomeProperty], toMapView mapView: MGLMapView) {
+    for (index, homeProperty) in homeProperties.enumerated() {
+      DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(index*600), execute: {
+        self.addHomeProperty(homeProperty, toMapView: mapView)
+      })
+    }
+  }
+  
   func addHomePropertyMapAnnotation(withAddress address: String,
                         atCoordinate coordinate: CLLocationCoordinate2D,
                         forHomeProperty homeProperty: HomeProperty,
