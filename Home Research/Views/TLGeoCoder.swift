@@ -16,6 +16,18 @@ class TLGeoCoder {
   private init() {
   }
   
+  func deleteAnnotationForHomeProperty(_ homeProperty: HomeProperty, inMapView mapView: MGLMapView?) {
+    let annotationsToDelete = mapView?.annotations?.filter { annotation in
+      return annotation.title == "\(homeProperty.sheriffNumber)"
+    }
+    
+    guard let annotations = annotationsToDelete else {
+      return
+    }
+    
+    mapView?.removeAnnotations(annotations)
+  }
+  
   func addMapAnnotation(withAddress address: String,
                         atCoordinate coordinate: CLLocationCoordinate2D,
                         toMapView mapView: MGLMapView) {

@@ -75,8 +75,11 @@ class HomePropertyTableViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
-      homePropertyManager.deleteHomeProperty(homePropertyManager.getHomePropertyAtIndex(indexPath.row))
+      let homePropertyToDelete = homePropertyManager.getHomePropertyAtIndex(indexPath.row)
+      homePropertyManager.deleteHomeProperty(homePropertyToDelete)
       tableView.deleteRows(at: [indexPath], with: .automatic)
+  
+      TLGeoCoder.shared.deleteAnnotationForHomeProperty(homePropertyToDelete, inMapView: detailedVC?.mapView)
     }
   }
   
