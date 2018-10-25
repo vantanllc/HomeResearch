@@ -12,6 +12,16 @@ import CoreStore
 class HomePropertyTableViewController: UITableViewController {
   let homePropertyManager = HomePropertyManager()
   var selectedHomeProperty: HomeProperty?
+  var detailedVC: MapOfAllHomePropertyViewController? {
+    get {
+      if let splitVC = self.splitViewController,
+        let detailVC = splitVC.viewControllers[1] as? MapOfAllHomePropertyViewController {
+        return detailVC
+      } else {
+        return nil
+      }
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,22 +30,8 @@ class HomePropertyTableViewController: UITableViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    if let splitVC = self.splitViewController,
-      let detailVC = splitVC.viewControllers[1] as? MapOfAllHomePropertyViewController {
-      for (index, homeProperty) in homePropertyManager.getAllHomeProperty().enumerated() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(index*600), execute: {
-          TLGeoCoder.shared.geocodeAddressString(homeProperty.address) { (placemarks, error) in
-            guard
-              let placemarks = placemarks,
-              let location = placemarks.first?.location
-              else {
-                return
-            }
-            
-            TLGeoCoder.shared.addHomePropertyMapAnnotation(withAddress: homeProperty.address, atCoordinate: location.coordinate, forHomeProperty: homeProperty, toMapView: detailVC.mapView)
-          }
-        })
-      }
+    if let detailedVC = detailedVC {
+      TLGeoCoder.shared.addHomeProperties(homePropertyManager.getAllHomeProperty(), toMapView: detailedVC.mapView)
     }
   }
   
@@ -71,6 +67,20 @@ class HomePropertyTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
     selectedHomeProperty = homePropertyManager.getHomePropertyAtIndex(indexPath.row)
     return indexPath
+  }
+  
+  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let homePropertyToDelete = homePropertyManager.getHomePropertyAtIndex(indexPath.row)
+      homePropertyManager.deleteHomeProperty(homePropertyToDelete)
+      tableView.deleteRows(at: [indexPath], with: .automatic)
+  
+      TLGeoCoder.shared.deleteAnnotationForHomeProperty(homePropertyToDelete, inMapView: detailedVC?.mapView)
+    }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
