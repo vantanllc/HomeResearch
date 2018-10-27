@@ -79,6 +79,10 @@ class DetailedHomePropertyTableViewController: UITableViewController {
     if let addNewPriceViewController = segue.destination as? AddNewPriceTableViewController {
       addNewPriceViewController.delegate = self
     }
+    if let editSalesDateViewController = segue.destination as? EditSalesDateTableViewController {
+      editSalesDateViewController.delegate = self
+      editSalesDateViewController.currentSalesDateToDisplay = homeProperty.salesDate
+    }
   }
 }
 
@@ -117,5 +121,13 @@ extension DetailedHomePropertyTableViewController: PriceHistoryDelegate {
     homeProperty = updatedHomeProperty
     loadBarChart()
     delegate?.didUpdateHomeProperty(updatedHomeProperty)
+  }
+}
+
+extension DetailedHomePropertyTableViewController: EditSalesDateDelegate {
+  func didEditSalesDate(_ newSalesDate: Date) {
+    homeProperty.updateSalesDate(newSalesDate)
+    salesDateLabel.text = TLDateFormatter.shared.getStringFromDate(homeProperty.salesDate)
+    delegate?.didUpdateHomeProperty(homeProperty)
   }
 }
