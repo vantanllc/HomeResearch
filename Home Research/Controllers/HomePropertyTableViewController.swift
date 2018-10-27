@@ -64,7 +64,7 @@ class HomePropertyTableViewController: UITableViewController {
     if homeProperty.salesDate > Date() {
       cell.backgroundColor = .green
     } else {
-      cell.backgroundColor = .lightGray
+      cell.backgroundColor = .gray
     }
     
     return cell
