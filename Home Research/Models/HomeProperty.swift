@@ -11,7 +11,7 @@ import Foundation
 struct HomeProperty {
   let sheriffNumber: UInt
   let judgementPrice: Double
-  let salesDate: Date
+  var salesDate: Date
   let address: String
   var prices: [PriceDate]
   
@@ -23,6 +23,10 @@ struct HomeProperty {
     prices = prices.filter {price in
       return !(price.date == date && price.price == priceToDelete)
     }
+  }
+  
+  mutating func updateSalesDate(_ newSalesDate: Date) {
+    salesDate = newSalesDate
   }
   
   func getPricesToDisplay() -> [PriceDate] {
@@ -44,7 +48,6 @@ extension HomeProperty: Hashable {
   var hashValue: Int {
     return sheriffNumber.hashValue
       ^ judgementPrice.hashValue
-      ^ salesDate.hashValue
       ^ address.hashValue
   }
   

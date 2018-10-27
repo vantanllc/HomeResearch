@@ -61,6 +61,12 @@ class HomePropertyTableViewController: UITableViewController {
     cell.judgementPriceLabel.text = "\(CurrencyFormatter.shared.convertPriceToCurrencyFormat(price: homeProperty.judgementPrice))"
     cell.resizeLabels()
     
+    if homeProperty.salesDate > Date() {
+      cell.backgroundColor = .green
+    } else {
+      cell.backgroundColor = .gray
+    }
+    
     return cell
   }
   

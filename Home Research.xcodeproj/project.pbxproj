@@ -27,6 +27,9 @@
 		8B1B60BC21735C8800BEBF9D /* TLGeoCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B60BB21735C8800BEBF9D /* TLGeoCoder.swift */; };
 		8B1B60BE21737DDA00BEBF9D /* BarChartViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B60BD21737DDA00BEBF9D /* BarChartViewExtension.swift */; };
 		8B3993E6218074D200BE18B2 /* MapOfAllHomePropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3993E5218074D200BE18B2 /* MapOfAllHomePropertyViewController.swift */; };
+		8B443D87218454E9008A50EC /* EditSalesDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B443D86218454E9008A50EC /* EditSalesDateTableViewController.swift */; };
+		8B443D89218456BD008A50EC /* EditSalesDateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B443D88218456BD008A50EC /* EditSalesDateDelegate.swift */; };
+		8B443D8B21846111008A50EC /* MyCustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B443D8A21846111008A50EC /* MyCustomPointAnnotation.swift */; };
 		8B8E2C832157A7CB004D3792 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8E2C822157A7CB004D3792 /* CustomPointAnnotation.swift */; };
 		8BADF0B7217F2A1300045B8C /* PriceDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BADF0B6217F2A1300045B8C /* PriceDate.swift */; };
 		8BB5D58E21567F220045FE70 /* AddNewHomePropertyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5D58D21567F220045FE70 /* AddNewHomePropertyTableViewController.swift */; };
@@ -88,6 +91,9 @@
 		8B1B60BB21735C8800BEBF9D /* TLGeoCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLGeoCoder.swift; sourceTree = "<group>"; };
 		8B1B60BD21737DDA00BEBF9D /* BarChartViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewExtension.swift; sourceTree = "<group>"; };
 		8B3993E5218074D200BE18B2 /* MapOfAllHomePropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOfAllHomePropertyViewController.swift; sourceTree = "<group>"; };
+		8B443D86218454E9008A50EC /* EditSalesDateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSalesDateTableViewController.swift; sourceTree = "<group>"; };
+		8B443D88218456BD008A50EC /* EditSalesDateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSalesDateDelegate.swift; sourceTree = "<group>"; };
+		8B443D8A21846111008A50EC /* MyCustomPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomPointAnnotation.swift; sourceTree = "<group>"; };
 		8B8E2C822157A7CB004D3792 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		8BADF0B6217F2A1300045B8C /* PriceDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceDate.swift; sourceTree = "<group>"; };
 		8BB5D58D21567F220045FE70 /* AddNewHomePropertyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHomePropertyTableViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +234,8 @@
 				8BFC3EE9217C941400AB4E6C /* AddNewPriceTableViewController.swift */,
 				8BFC3EF0217CA65C00AB4E6C /* AddNewPriceDelegate.swift */,
 				8B3993E5218074D200BE18B2 /* MapOfAllHomePropertyViewController.swift */,
+				8B443D86218454E9008A50EC /* EditSalesDateTableViewController.swift */,
+				8B443D88218456BD008A50EC /* EditSalesDateDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +249,7 @@
 				8B1B60B9217357E900BEBF9D /* TLDateFormatter.swift */,
 				8B1B60BB21735C8800BEBF9D /* TLGeoCoder.swift */,
 				8B1B60BD21737DDA00BEBF9D /* BarChartViewExtension.swift */,
+				8B443D8A21846111008A50EC /* MyCustomPointAnnotation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -507,11 +516,14 @@
 				8BFC3EF1217CA65C00AB4E6C /* AddNewPriceDelegate.swift in Sources */,
 				8B01E030214E961D00068EA8 /* HomePropertyTableViewCell.swift in Sources */,
 				8B1B60BE21737DDA00BEBF9D /* BarChartViewExtension.swift in Sources */,
+				8B443D87218454E9008A50EC /* EditSalesDateTableViewController.swift in Sources */,
 				8BADF0B7217F2A1300045B8C /* PriceDate.swift in Sources */,
 				8BFC3EF5217CAFD900AB4E6C /* HomePropertyTableViewController+DetailedHomePropertyDelegate.swift in Sources */,
 				8BB5D58E21567F220045FE70 /* AddNewHomePropertyTableViewController.swift in Sources */,
 				8B01E02E214E8ED600068EA8 /* HomePropertyTableViewController.swift in Sources */,
 				8BFC3EF3217CAF2700AB4E6C /* DetailedHomePropertyDelegate.swift in Sources */,
+				8B443D8B21846111008A50EC /* MyCustomPointAnnotation.swift in Sources */,
+				8B443D89218456BD008A50EC /* EditSalesDateDelegate.swift in Sources */,
 				8BFC3EEC217C9DF900AB4E6C /* PriceHistoryDelegate.swift in Sources */,
 				8B3993E6218074D200BE18B2 /* MapOfAllHomePropertyViewController.swift in Sources */,
 				8BFC3EE8217C7A9A00AB4E6C /* PriceHistoryTableViewController.swift in Sources */,
