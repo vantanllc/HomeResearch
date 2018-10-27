@@ -56,6 +56,7 @@ private struct Static {
         )
         
         homePropertyModel?.prices = homeProperty.getPricesAsData()
+        homePropertyModel?.salesDate = homeProperty.salesDate
     }, waitForAllObservers: false
     )
   }
