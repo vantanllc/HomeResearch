@@ -48,7 +48,6 @@ extension HomeProperty: Hashable {
   var hashValue: Int {
     return sheriffNumber.hashValue
       ^ judgementPrice.hashValue
-      ^ salesDate.hashValue
       ^ address.hashValue
   }
   

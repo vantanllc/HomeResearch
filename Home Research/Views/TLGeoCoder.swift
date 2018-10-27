@@ -64,11 +64,15 @@ class TLGeoCoder {
                         atCoordinate coordinate: CLLocationCoordinate2D,
                         forHomeProperty homeProperty: HomeProperty,
                         toMapView mapView: MGLMapView) {
-    let point = CustomPointAnnotation(coordinate: coordinate,
+    let point = MyCustomPointAnnotation(coordinate: coordinate,
                                       title: "\(homeProperty.sheriffNumber)",
                                       subtitle: homeProperty.address)
+    if homeProperty.salesDate < Date() {
+      point.willUseImage = true
+    }
     
     point.reuseIdentifier = "customMapAnnotation"
+  
     mapView.addAnnotation(point)
   }
   
